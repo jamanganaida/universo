@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dq6as0aepc2ld"]
+
+[node name="pantallita" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer"]
+z_index = -4
+texture_filter = 2
+anchors_preset = -1
+anchor_left = 0.864583
+anchor_top = 0.757716
+anchor_right = 0.998264
+anchor_bottom = 0.998457
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_stretch_ratio = 0.0
+color = Color(0.301988, 0.317708, 0.0661892, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/ColorRect3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0389809
+anchor_top = 0.0448718
+anchor_right = 0.974039
+anchor_bottom = 0.967949
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/ColorRect3"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.903846
+anchor_right = 1.0
+anchor_bottom = 0.983849
+offset_bottom = 143.52
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1, 0.0800024)
+size_flags_stretch_ratio = 0.0
+color = Color(0.301988, 0.317708, 0.0661892, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer/ColorRect3"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0584415
+anchor_top = 0.0705128
+anchor_right = 1.05844
+anchor_bottom = 0.150515
+offset_bottom = 143.52
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.0323453, 0.0165351)
+size_flags_stretch_ratio = 0.0
+color = Color(0.0368924, 0.708333, 0.141805, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+z_index = 2
+texture_filter = 2
+custom_minimum_size = Vector2(156, 156)
+layout_mode = 3
+anchor_left = 0.859375
+anchor_top = 0.751543
+anchor_right = 0.994792
+anchor_bottom = 0.992284
+offset_left = 6.0
+offset_top = 4.00015
+offset_right = 5.99963
+offset_bottom = 3.99994
+grow_horizontal = 0
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="ConPer" type="Control" parent="CanvasLayer/Control"]
+texture_filter = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ConMon" type="Control" parent="CanvasLayer/Control"]
+texture_filter = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ConEne" type="Control" parent="CanvasLayer/Control"]
+texture_filter = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

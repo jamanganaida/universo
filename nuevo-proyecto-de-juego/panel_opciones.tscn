@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgnuxymhekpqt"]
+
+[ext_resource type="Script" path="res://panel_opciones.gd" id="1_pagt7"]
+
+[node name="PanelContainer3" type="VBoxContainer"]
+custom_minimum_size = Vector2(150, 100)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 150.0
+grow_vertical = 0
+alignment = 1
+script = ExtResource("1_pagt7")
+
+[node name="Button8" type="Button" parent="."]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.864583, 0.0855577, 0.0855577, 1)
+text = "Tienda"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.864583, 0.0855577, 0.0855577, 1)
+text = "Mejoras"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.864583, 0.0855577, 0.0855577, 1)
+text = "Construccion"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.864583, 0.0855577, 0.0855577, 1)
+text = "Personaje"
+
+[node name="Button9" type="Button" parent="."]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.864583, 0.0855577, 0.0855577, 1)
+text = "Cocina"
+
+[connection signal="pressed" from="Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

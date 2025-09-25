@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmn7la0slpon2"]
+
+[ext_resource type="Script" path="res://puerta_verde.gd" id="1_d64q5"]
+[ext_resource type="Texture2D" uid="uid://b02djuwdkiyl3" path="res://puerta_verde.png" id="1_gdjrj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2no4r"]
+size = Vector2(57, 92)
+
+[node name="puerta_verde" type="Area2D"]
+script = ExtResource("1_d64q5")
+metadata/_edit_horizontal_guides_ = [-12.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -58)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_gdjrj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(0, -57)
+shape = SubResource("RectangleShape2D_2no4r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

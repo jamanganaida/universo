@@ -1,0 +1,30 @@
+[gd_scene load_steps=9 format=3 uid="uid://cg54xpjpxdop8"]
+
+[ext_resource type="Script" path="res://verdura.gd" id="1_u1c5k"]
+[ext_resource type="Texture2D" uid="uid://c8dh41o4xirkm" path="res://maiz.png" id="1_vee60"]
+[ext_resource type="Texture2D" uid="uid://btuffkpxi41e3" path="res://tomate.png" id="2_pi1ig"]
+[ext_resource type="Texture2D" uid="uid://bsvgrqsib4dge" path="res://brocoli.png" id="4_7dl3b"]
+[ext_resource type="Texture2D" uid="uid://dmydok86j3cq0" path="res://pimiento.png" id="5_x5vut"]
+[ext_resource type="Texture2D" uid="uid://bd3fijdv6wqgl" path="res://cebolla.png" id="6_hyku0"]
+[ext_resource type="Texture2D" uid="uid://cavnk8ype1sfh" path="res://zanahoria.png" id="7_iw612"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a8b3j"]
+radius = 33.0606
+
+[node name="verdura" type="Area2D"]
+script = ExtResource("1_u1c5k")
+tomate = ExtResource("2_pi1ig")
+maiz = ExtResource("1_vee60")
+brocoli = ExtResource("4_7dl3b")
+pimiento = ExtResource("5_x5vut")
+cebolla = ExtResource("6_hyku0")
+zanahoria = ExtResource("7_iw612")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a8b3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_vee60")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

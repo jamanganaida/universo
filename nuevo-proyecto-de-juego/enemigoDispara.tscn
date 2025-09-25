@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://hcdln4obaolo"]
+
+[ext_resource type="Script" path="res://enemigoDispara.gd" id="1_brum1"]
+[ext_resource type="PackedScene" uid="uid://80mc2lkhdvwa" path="res://balaEnemigo.tscn" id="2_bwpkd"]
+[ext_resource type="Texture2D" uid="uid://culeqtihytqe4" path="res://icon.svg" id="2_u2mt4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i82q1"]
+size = Vector2(59, 62)
+
+[node name="enemigoDispara" type="Area2D" groups=["enemigo"]]
+collision_layer = 32
+collision_mask = 16
+script = ExtResource("1_brum1")
+bullet_scene = ExtResource("2_bwpkd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i82q1")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_u2mt4")

@@ -1,0 +1,394 @@
+[gd_scene load_steps=12 format=3 uid="uid://dnn732axcuwgd"]
+
+[ext_resource type="Script" path="res://menu_construccion.gd" id="1_w0376"]
+[ext_resource type="PackedScene" uid="uid://62epbqipjcp0" path="res://plataforma.tscn" id="2_2rsye"]
+[ext_resource type="Texture2D" uid="uid://dppujfqsdb6jy" path="res://plataformaPimiento.png" id="2_osywq"]
+[ext_resource type="Texture2D" uid="uid://q7d0r4u6tdg6" path="res://Plataforma.png" id="2_wjxns"]
+[ext_resource type="PackedScene" uid="uid://c8x8qjjac2rwo" path="res://plataformaCultivo.tscn" id="3_dnkhy"]
+[ext_resource type="Texture2D" uid="uid://c2w3y4dsidq7k" path="res://plataformaTomate.png" id="3_onv1m"]
+[ext_resource type="Texture2D" uid="uid://ds0yvb8ognyb8" path="res://plataformaBrocoli.png" id="4_ul6u4"]
+[ext_resource type="Texture2D" uid="uid://d4l2yik8td1dp" path="res://plataformaCebolla.png" id="5_bfp7p"]
+[ext_resource type="Texture2D" uid="uid://bhrfle183mcgh" path="res://plataformaMaiz.png" id="6_s2irp"]
+[ext_resource type="Texture2D" uid="uid://b1g1akkl3mwxe" path="res://plataformaZanahoria.png" id="7_j82ga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tuit"]
+size = Vector2(1144, 640)
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(700, 550)
+anchors_preset = -1
+anchor_left = 0.196181
+anchor_top = 0.0756173
+anchor_right = 0.803819
+anchor_bottom = 0.924383
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_w0376")
+plataforma = ExtResource("2_2rsye")
+plataformaCultivo = ExtResource("3_dnkhy")
+metadata/_edit_use_anchors_ = true
+
+[node name="titulo" type="Panel" parent="."]
+custom_minimum_size = Vector2(272, 25)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.170438
+anchor_top = 0.0272206
+anchor_right = 0.877652
+anchor_bottom = 0.0988539
+offset_left = -93.4997
+offset_top = -1.86245
+offset_right = -321.5
+offset_bottom = -3.36677
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="mejoras" type="Label" parent="titulo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -11.5
+offset_right = 26.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Construir"
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 66.0
+offset_right = 685.0
+offset_bottom = 524.0
+
+[node name="personaje" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -224.0
+offset_right = 74.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Plataformas Cultivo"
+
+[node name="Pimiento" type="Panel" parent="Panel2"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 41.0
+offset_right = 303.0
+offset_bottom = 126.0
+
+[node name="Panel" type="Panel" parent="Panel2/Pimiento"]
+layout_mode = 0
+offset_left = 2.5
+offset_top = 3.5
+offset_right = 82.5
+offset_bottom = 83.5
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/Pimiento/Panel"]
+position = Vector2(39, 37)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_osywq")
+
+[node name="comprarPlataformaPimiento" type="Button" parent="Panel2/Pimiento"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0395189
+anchor_top = 0.637931
+anchor_right = 0.252577
+anchor_bottom = 0.994253
+grow_horizontal = 2
+grow_vertical = 0
+text = "$1,000"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel2/Pimiento"]
+layout_mode = 0
+offset_left = 89.5
+offset_top = 5.5
+offset_right = 283.5
+offset_bottom = 80.5
+text = "Plataforma da pimiento: Requerido para sopas y guisos."
+autowrap_mode = 2
+
+[node name="Tomate" type="Panel" parent="Panel2"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 41.0
+offset_right = 645.0
+offset_bottom = 126.0
+
+[node name="Panel" type="Panel" parent="Panel2/Tomate"]
+layout_mode = 0
+offset_left = 2.5
+offset_top = 3.5
+offset_right = 82.5
+offset_bottom = 83.5
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/Tomate/Panel"]
+position = Vector2(39, 37)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("3_onv1m")
+
+[node name="comprarPlataformaTomate" type="Button" parent="Panel2/Tomate"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0395189
+anchor_top = 0.637931
+anchor_right = 0.252577
+anchor_bottom = 0.994253
+grow_horizontal = 2
+grow_vertical = 0
+text = "$100"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel2/Tomate"]
+layout_mode = 0
+offset_left = 89.5
+offset_top = 5.5
+offset_right = 283.5
+offset_bottom = 80.5
+text = "Plataforma da Tomate: Usado en sopa, guisos y jugo.."
+autowrap_mode = 2
+
+[node name="Brocoli" type="Panel" parent="Panel2"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 134.0
+offset_right = 303.0
+offset_bottom = 219.0
+
+[node name="Panel" type="Panel" parent="Panel2/Brocoli"]
+layout_mode = 0
+offset_left = 2.5
+offset_top = 3.5
+offset_right = 82.5
+offset_bottom = 83.5
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/Brocoli/Panel"]
+position = Vector2(39, 37)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("4_ul6u4")
+
+[node name="comprarPlataformaBrocoli" type="Button" parent="Panel2/Brocoli"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0395189
+anchor_top = 0.637931
+anchor_right = 0.252577
+anchor_bottom = 0.994253
+grow_horizontal = 2
+grow_vertical = 0
+text = "$5,000"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel2/Brocoli"]
+layout_mode = 0
+offset_left = 89.5
+offset_top = 5.5
+offset_right = 283.5
+offset_bottom = 80.5
+text = "Plataforma da Brocoli: Aburrida pero poderosa verdura, \"da vida\"."
+autowrap_mode = 2
+
+[node name="Cebolla" type="Panel" parent="Panel2"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 134.0
+offset_right = 645.0
+offset_bottom = 219.0
+
+[node name="Panel" type="Panel" parent="Panel2/Cebolla"]
+layout_mode = 0
+offset_left = 2.5
+offset_top = 3.5
+offset_right = 82.5
+offset_bottom = 83.5
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/Cebolla/Panel"]
+position = Vector2(39, 37)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("5_bfp7p")
+
+[node name="comprarPlataformaCebolla" type="Button" parent="Panel2/Cebolla"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0395189
+anchor_top = 0.637931
+anchor_right = 0.252577
+anchor_bottom = 0.994253
+grow_horizontal = 2
+grow_vertical = 0
+text = "$15,000"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel2/Cebolla"]
+layout_mode = 0
+offset_left = 89.5
+offset_top = 5.5
+offset_right = 283.5
+offset_bottom = 80.5
+text = "Plataforma da cebolla: Escencial para el guiso."
+autowrap_mode = 2
+
+[node name="Maiz" type="Panel" parent="Panel2"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 227.0
+offset_right = 304.0
+offset_bottom = 312.0
+
+[node name="Panel" type="Panel" parent="Panel2/Maiz"]
+layout_mode = 0
+offset_left = 2.5
+offset_top = 3.5
+offset_right = 82.5
+offset_bottom = 83.5
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/Maiz/Panel"]
+position = Vector2(39, 37)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("6_s2irp")
+
+[node name="comprarPlataformaMaiz" type="Button" parent="Panel2/Maiz"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0395189
+anchor_top = 0.637931
+anchor_right = 0.252577
+anchor_bottom = 0.994253
+grow_horizontal = 2
+grow_vertical = 0
+text = "$40,000"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel2/Maiz"]
+layout_mode = 0
+offset_left = 89.5
+offset_top = 5.5
+offset_right = 283.5
+offset_bottom = 80.5
+text = "Plataforma da Maíz: Va muy bien con guisos."
+autowrap_mode = 2
+
+[node name="Zanahoria" type="Panel" parent="Panel2"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 227.0
+offset_right = 645.0
+offset_bottom = 312.0
+
+[node name="Panel" type="Panel" parent="Panel2/Zanahoria"]
+layout_mode = 0
+offset_left = 2.5
+offset_top = 3.5
+offset_right = 82.5
+offset_bottom = 83.5
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/Zanahoria/Panel"]
+position = Vector2(39, 37)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("7_j82ga")
+
+[node name="comprarPlataformaZanahoria" type="Button" parent="Panel2/Zanahoria"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0395189
+anchor_top = 0.637931
+anchor_right = 0.252577
+anchor_bottom = 0.994253
+grow_horizontal = 2
+grow_vertical = 0
+text = "$500"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel2/Zanahoria"]
+layout_mode = 0
+offset_left = 89.5
+offset_top = 5.5
+offset_right = 283.5
+offset_bottom = 80.5
+text = "Plataforma da Zanahoria: Requerido para sopas y guisos."
+autowrap_mode = 2
+
+[node name="personaje2" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = 97.0
+offset_right = 76.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Plataforma Común "
+
+[node name="Plataforma común" type="Panel" parent="Panel2"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 361.0
+offset_right = 482.0
+offset_bottom = 448.0
+
+[node name="Panel" type="Panel" parent="Panel2/Plataforma común"]
+layout_mode = 0
+offset_left = 2.5
+offset_top = 3.5
+offset_right = 82.5
+offset_bottom = 83.5
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/Plataforma común/Panel"]
+position = Vector2(39, 37)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_wjxns")
+
+[node name="comprarPlataformaComún" type="Button" parent="Panel2/Plataforma común"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0395189
+anchor_top = 0.637931
+anchor_right = 0.252577
+anchor_bottom = 0.994253
+grow_horizontal = 2
+grow_vertical = 0
+text = "$50"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel2/Plataforma común"]
+layout_mode = 0
+offset_left = 89.5
+offset_top = 5.5
+offset_right = 283.5
+offset_bottom = 80.5
+text = "Plataforma Común: Pedaso de tierra por donde caminar."
+autowrap_mode = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-3.00003, 98)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(350.5, 172.5)
+shape = SubResource("RectangleShape2D_0tuit")
+
+[connection signal="pressed" from="Panel2/Pimiento/comprarPlataformaPimiento" to="." method="_on_comprar_plataforma_pimiento_pressed"]
+[connection signal="pressed" from="Panel2/Tomate/comprarPlataformaTomate" to="." method="_on_comprar_plataforma_tomate_pressed"]
+[connection signal="pressed" from="Panel2/Brocoli/comprarPlataformaBrocoli" to="." method="_on_comprar_plataforma_brocoli_pressed"]
+[connection signal="pressed" from="Panel2/Cebolla/comprarPlataformaCebolla" to="." method="_on_comprar_plataforma_cebolla_pressed"]
+[connection signal="pressed" from="Panel2/Maiz/comprarPlataformaMaiz" to="." method="_on_comprar_plataforma_maiz_pressed"]
+[connection signal="pressed" from="Panel2/Zanahoria/comprarPlataformaZanahoria" to="." method="_on_comprar_plataforma_zanahoria_pressed"]
+[connection signal="pressed" from="Panel2/Plataforma común/comprarPlataformaComún" to="." method="_on_comprar_plataforma_común_pressed"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

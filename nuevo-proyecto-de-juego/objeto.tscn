@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsdor0n740v25"]
+
+[ext_resource type="Texture2D" uid="uid://dmydok86j3cq0" path="res://pimiento.png" id="1_rqc8q"]
+[ext_resource type="Script" path="res://objeto_inventario.gd" id="1_v4xrw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gok8m"]
+
+[node name="objeto" type="Panel"]
+offset_right = 80.0
+offset_bottom = 84.0
+tooltip_text = "Bate +2 daño"
+script = ExtResource("1_v4xrw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(40, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_rqc8q")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+anchor_top = 0.654762
+anchor_bottom = 0.654762
+offset_top = 30.0
+offset_right = 80.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "nombre"
+label_settings = SubResource("LabelSettings_gok8m")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 89.0
+offset_bottom = 111.0
+flat = true
+
+[node name="Button2" type="Button" parent="Button"]
+visible = false
+z_index = 6
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14433
+anchor_top = 0.739496
+anchor_right = 0.845361
+anchor_bottom = 1.0
+action_mode = 0
+text = "Equipar"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="focus_exited" from="Button" to="." method="_on_button_focus_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button/Button2" to="." method="_on_button_2_pressed"]

@@ -1,0 +1,12 @@
+res://menuPersonajeEquipamiento.tscn
+res://enemigoDispara.gd
+res://menu_personaje_equipamiento.gd
+res://panelContenedorObjetos.gd
+res://nivel1.tscn
+res://niveles.tscn
+res://panel_opciones.tscn
+res://menu_tienda.tscn
+res://objeto.tscn
+res://objeto_arrastrable.gd
+res://datos.gd
+res://objeto_inventario.gd

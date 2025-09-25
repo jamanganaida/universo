@@ -1,0 +1,333 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhsyiqtjsfsmo"]
+
+[ext_resource type="Script" path="res://menu_personaje_equipamiento.gd" id="1_ehjon"]
+[ext_resource type="PackedScene" uid="uid://dsdor0n740v25" path="res://objeto.tscn" id="3_imub6"]
+[ext_resource type="Script" path="res://panelContenedorObjetos.gd" id="4_g8ao3"]
+[ext_resource type="Texture2D" uid="uid://djtlmhbojp683" path="res://personaje.png" id="6_o3oae"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fh5gk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tuit"]
+size = Vector2(1144, 640)
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(700, 550)
+anchors_preset = -1
+anchor_left = 0.130208
+anchor_top = 0.0540123
+anchor_right = 0.868923
+anchor_bottom = 0.967592
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ehjon")
+objetoContenedor = ExtResource("3_imub6")
+metadata/_edit_use_anchors_ = true
+
+[node name="titulo" type="Panel" parent="."]
+custom_minimum_size = Vector2(272, 25)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00587545
+anchor_top = 0.00844595
+anchor_right = 0.44517
+anchor_bottom = 0.0775381
+size_flags_horizontal = 0
+size_flags_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="mejoras" type="Label" parent="titulo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -11.5
+offset_right = 26.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Equipamiento Personaje "
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0117509
+anchor_top = 0.097973
+anchor_right = 0.987074
+anchor_bottom = 0.986487
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel2" type="Panel" parent="Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00963855
+anchor_top = 0.0152091
+anchor_right = 0.474699
+anchor_bottom = 0.986692
+metadata/_edit_use_anchors_ = true
+
+[node name="personaje" type="Label" parent="Panel2/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.300518
+anchor_top = 0.0136986
+anchor_right = 0.715152
+anchor_bottom = 0.0616153
+grow_horizontal = 2
+grow_vertical = 2
+text = "Nombre Personaje"
+metadata/_edit_use_anchors_ = true
+
+[node name="armaCorta" type="Panel" parent="Panel2/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0699482
+anchor_top = 0.0626223
+anchor_right = 0.28675
+anchor_bottom = 0.229289
+tooltip_text = "Escoba +1 daño"
+metadata/_edit_use_anchors_ = true
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/Panel2/armaCorta"]
+position = Vector2(37, 37)
+scale = Vector2(0.8, 0.8)
+
+[node name="ComprarEscoba" type="Label" parent="Panel2/Panel2/armaCorta"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = 19.0
+offset_right = 44.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Arma Corta"
+
+[node name="armaLarga" type="Panel" parent="Panel2/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.694301
+anchor_top = 0.0782779
+anchor_right = 0.911103
+anchor_bottom = 0.244945
+tooltip_text = "Liana +15 daño"
+metadata/_edit_use_anchors_ = true
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/Panel2/armaLarga"]
+position = Vector2(39, 37)
+scale = Vector2(0.8, 0.8)
+
+[node name="VenderLiana22lr" type="Label" parent="Panel2/Panel2/armaLarga"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = 10.0
+offset_right = 35.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Arma Larga"
+
+[node name="consumible" type="Panel" parent="Panel2/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.373057
+anchor_top = 0.223092
+anchor_right = 0.589859
+anchor_bottom = 0.389759
+tooltip_text = "Engau +87 daño"
+metadata/_edit_use_anchors_ = true
+
+[node name="img" type="Sprite2D" parent="Panel2/Panel2/consumible"]
+position = Vector2(41, 41)
+scale = Vector2(0.7, 0.7)
+
+[node name="consumible" type="Label" parent="Panel2/Panel2/consumible"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = 10.0
+offset_right = 35.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Consumible"
+
+[node name="InformacionPersonaje" type="Panel" parent="Panel2/Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0284974
+anchor_top = 0.549902
+anchor_right = 0.960747
+anchor_bottom = 0.916569
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 25.0
+offset_right = 57.0
+offset_bottom = 48.0
+text = "Vida:"
+
+[node name="Label2" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
+layout_mode = 0
+offset_left = 16.9998
+offset_top = 51.0
+offset_right = 98.9998
+offset_bottom = 74.0
+text = "Daño ATQ:"
+
+[node name="Label3" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
+layout_mode = 0
+offset_left = 16.9998
+offset_top = 76.0
+offset_right = 133.0
+offset_bottom = 99.0
+text = "Velocidad ATQ:"
+
+[node name="Label4" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
+layout_mode = 0
+offset_left = 16.9998
+offset_top = 103.0
+offset_right = 133.0
+offset_bottom = 126.0
+text = "Habilidad:"
+
+[node name="Label5" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
+layout_mode = 0
+offset_left = 16.9998
+offset_top = 130.0
+offset_right = 133.0
+offset_bottom = 153.0
+text = "Extra:"
+
+[node name="personaje2" type="Panel" parent="Panel2/Panel2"]
+layout_mode = 0
+anchor_left = 0.468913
+anchor_top = 0.133073
+anchor_right = 0.57254
+anchor_bottom = 0.21135
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fh5gk")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/Panel2/personaje2"]
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("6_o3oae")
+
+[node name="titulo2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.488837
+anchor_top = 0.0422298
+anchor_right = 0.693302
+anchor_bottom = 0.0945946
+size_flags_horizontal = 0
+size_flags_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="mejoras" type="Label" parent="titulo2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.347426
+anchor_top = 0.04
+anchor_right = 0.652574
+anchor_bottom = 0.96
+grow_horizontal = 2
+grow_vertical = 2
+text = "Inventario"
+metadata/_edit_use_anchors_ = true
+
+[node name="listaDeObjetos" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.485311
+anchor_top = 0.109797
+anchor_right = 0.977674
+anchor_bottom = 0.971284
+offset_left = 3.0
+offset_right = 3.00006
+script = ExtResource("4_g8ao3")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.964748
+anchor_top = 0.0422298
+anchor_right = 0.9859
+anchor_bottom = 0.0945947
+grow_horizontal = 0
+grow_vertical = 0
+text = ">"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.900118
+anchor_top = 0.0422298
+anchor_right = 0.92127
+anchor_bottom = 0.0945947
+grow_horizontal = 0
+grow_vertical = 0
+text = "<"
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.716804
+anchor_top = 0.0405406
+anchor_right = 0.864866
+anchor_bottom = 0.0929055
+selected = 0
+item_count = 4
+popup/item_0/text = "Todo"
+popup/item_1/text = "Arma corta"
+popup/item_1/id = 1
+popup/item_2/text = "Arma larga"
+popup/item_2/id = 2
+popup/item_3/text = "Consumible"
+popup/item_3/id = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="informacionPaginas" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.922445
+anchor_top = 0.0489865
+anchor_right = 0.963573
+anchor_bottom = 0.0878379
+text = "0/0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+position = Vector2(6, 119)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(423, 173)
+shape = SubResource("RectangleShape2D_0tuit")
+
+[connection signal="pressed" from="Button" to="listaDeObjetos" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="listaDeObjetos" method="_on_button_2_pressed"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

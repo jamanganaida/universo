@@ -1,0 +1,135 @@
+[gd_scene load_steps=3 format=3 uid="uid://bywsbxacp47sq"]
+
+[ext_resource type="Script" path="res://canvas_layer_casa.gd" id="1_su2ht"]
+[ext_resource type="PackedScene" uid="uid://bgnuxymhekpqt" path="res://panel_opciones.tscn" id="2_0kk4n"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_su2ht")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="PanelContainer3" parent="Control" instance=ExtResource("2_0kk4n")]
+layout_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 30.0
+
+[node name="Vida" type="Label" parent="Control/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Vida: 0"
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/PanelContainer"]
+modulate = Color(1, 0, 0, 1)
+z_index = -1
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 0.0
+rounded = true
+allow_greater = true
+allow_lesser = true
+show_percentage = false
+
+[node name="PanelContainer2" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 30.0
+grow_horizontal = 0
+
+[node name="Puntos" type="Label" parent="Control/PanelContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Puntos: 0"
+
+[node name="PanelContainer4" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_top = 2.0
+offset_right = 54.0
+offset_bottom = 32.0
+grow_horizontal = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control/PanelContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 17
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="Monedas" type="Label" parent="Control/PanelContainer4/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Monedas: 0"
+
+[node name="maiz" type="Label" parent="Control/PanelContainer4/GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Monedas: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="brocoli" type="Label" parent="Control/PanelContainer4/GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Monedas: 0"
+
+[node name="zanahoria" type="Label" parent="Control/PanelContainer4/GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Monedas: 0"
+
+[node name="cebolla" type="Label" parent="Control/PanelContainer4/GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Monedas: 0"
+
+[node name="tomate" type="Label" parent="Control/PanelContainer4/GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Monedas: 0"
+
+[node name="pimiento" type="Label" parent="Control/PanelContainer4/GridContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Monedas: 0"
+
+[node name="ContenedorMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[connection signal="mouse_entered" from="Control/PanelContainer4" to="." method="_on_panel_container_4_mouse_entered"]
+[connection signal="mouse_exited" from="Control/PanelContainer4" to="." method="_on_panel_container_4_mouse_exited"]

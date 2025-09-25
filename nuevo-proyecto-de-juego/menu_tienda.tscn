@@ -1,0 +1,858 @@
+[gd_scene load_steps=21 format=3 uid="uid://coxgfjrije4ds"]
+
+[ext_resource type="Script" path="res://menu_tienda.gd" id="1_y6okh"]
+[ext_resource type="Texture2D" uid="uid://btuffkpxi41e3" path="res://tomate.png" id="4_h7jwf"]
+[ext_resource type="Texture2D" uid="uid://cavnk8ype1sfh" path="res://zanahoria.png" id="5_mijr4"]
+[ext_resource type="Texture2D" uid="uid://c8dh41o4xirkm" path="res://maiz.png" id="6_0mxn8"]
+[ext_resource type="Texture2D" uid="uid://bd3fijdv6wqgl" path="res://cebolla.png" id="7_bb8ch"]
+[ext_resource type="Texture2D" uid="uid://ghoij8kn2m48" path="res://arma-0-escoba.png" id="8_qjpn3"]
+[ext_resource type="Texture2D" uid="uid://bsvgrqsib4dge" path="res://brocoli.png" id="8_txoyl"]
+[ext_resource type="Texture2D" uid="uid://comculh2po7ik" path="res://arma-1-bate.png" id="9_x3h3o"]
+[ext_resource type="Texture2D" uid="uid://dmydok86j3cq0" path="res://pimiento.png" id="9_xrx38"]
+[ext_resource type="Texture2D" uid="uid://k4sst3a654b2" path="res://arma-2-remo.png" id="10_ekb15"]
+[ext_resource type="Texture2D" uid="uid://b7mgk57feec0s" path="res://arma-4-horquilla.png" id="11_q0gbh"]
+[ext_resource type="Texture2D" uid="uid://bnscercosdwvn" path="res://arma-5-pala.png" id="12_24j01"]
+[ext_resource type="Texture2D" uid="uid://dj8axackqte06" path="res://arma-6-acha.png" id="13_hugfn"]
+[ext_resource type="Texture2D" uid="uid://dory7pjtcxxd4" path="res://arma-fuego-1-Liana22lr.png" id="14_ax4tm"]
+[ext_resource type="Texture2D" uid="uid://dhce8dauyxauy" path="res://arma-fuego-2-Doca9mm.png" id="15_5ncpj"]
+[ext_resource type="Texture2D" uid="uid://brym407hysuob" path="res://arma-fuego-3-Boom9mm.png" id="16_dpj8n"]
+[ext_resource type="Texture2D" uid="uid://clexl63w8aj6p" path="res://arma-fuego-4-Aloe9mm.png" id="17_f8nrp"]
+[ext_resource type="Texture2D" uid="uid://baiy5hrmqesnu" path="res://arma-fuego-5-Engau9mm.png" id="18_3ue7f"]
+[ext_resource type="Texture2D" uid="uid://dmncdia1o6wr6" path="res://arma-fuego-6-Pluto10mm.png" id="19_ls6t4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsjcp"]
+size = Vector2(1144, 640)
+
+[node name="menu tienda" type="Panel"]
+custom_minimum_size = Vector2(700, 370)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -353.5
+offset_top = -174.5
+offset_right = 353.5
+offset_bottom = 195.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_y6okh")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(272, 25)
+layout_mode = 2
+anchor_left = 0.170438
+anchor_top = 0.0272206
+anchor_right = 0.877652
+anchor_bottom = 0.0988539
+offset_left = -95.4997
+offset_top = 0.928378
+offset_right = -323.5
+offset_bottom = -0.575943
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Tienda" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -11.5
+offset_right = 26.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tienda"
+
+[node name="PanelCultivos" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 47.0
+offset_right = 685.0
+offset_bottom = 347.0
+
+[node name="Panel" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 30.0
+offset_right = 93.0
+offset_bottom = 110.0
+tooltip_text = "Tomate"
+
+[node name="Tomate" type="Sprite2D" parent="PanelCultivos/Panel"]
+position = Vector2(39, 37)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_h7jwf")
+
+[node name="ComprarTomate" type="Button" parent="PanelCultivos/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$50 x 1"
+
+[node name="Panel2" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 30.0
+offset_right = 203.0
+offset_bottom = 110.0
+tooltip_text = "Zanahoria"
+
+[node name="Tomate2" type="Sprite2D" parent="PanelCultivos/Panel2"]
+position = Vector2(40, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_mijr4")
+
+[node name="ComprarZanahoria" type="Button" parent="PanelCultivos/Panel2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$20,000 x 1"
+
+[node name="Panel3" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 30.0
+offset_right = 313.0
+offset_bottom = 110.0
+tooltip_text = "Maiz"
+
+[node name="Tomate3" type="Sprite2D" parent="PanelCultivos/Panel3"]
+position = Vector2(40, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_0mxn8")
+
+[node name="ComprarMaiz" type="Button" parent="PanelCultivos/Panel3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$250 x 1"
+
+[node name="Panel4" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 30.0
+offset_right = 423.0
+offset_bottom = 110.0
+tooltip_text = "Cebolla"
+
+[node name="Tomate4" type="Sprite2D" parent="PanelCultivos/Panel4"]
+position = Vector2(39, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_bb8ch")
+
+[node name="ComprarCebolla" type="Button" parent="PanelCultivos/Panel4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$7,500 x 1"
+
+[node name="Panel5" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 30.0
+offset_right = 533.0
+offset_bottom = 110.0
+tooltip_text = "Brocoli"
+
+[node name="Tomate5" type="Sprite2D" parent="PanelCultivos/Panel5"]
+position = Vector2(41, 41)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_txoyl")
+
+[node name="ComprarBrocoli" type="Button" parent="PanelCultivos/Panel5"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$2,500 x 1"
+
+[node name="Panel6" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 563.0
+offset_top = 30.0
+offset_right = 643.0
+offset_bottom = 110.0
+tooltip_text = "Pimiento"
+
+[node name="Tomate6" type="Sprite2D" parent="PanelCultivos/Panel6"]
+position = Vector2(43, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_xrx38")
+
+[node name="ComprarPimiento" type="Button" parent="PanelCultivos/Panel6"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$500 x 1"
+
+[node name="Panel7" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 180.0
+offset_right = 93.0
+offset_bottom = 260.0
+
+[node name="Tomate" type="Sprite2D" parent="PanelCultivos/Panel7"]
+position = Vector2(39, 37)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_h7jwf")
+
+[node name="VenderTomate" type="Button" parent="PanelCultivos/Panel7"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$10 x 1"
+
+[node name="Panel8" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 180.0
+offset_right = 203.0
+offset_bottom = 260.0
+
+[node name="Tomate2" type="Sprite2D" parent="PanelCultivos/Panel8"]
+position = Vector2(40, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_mijr4")
+
+[node name="VenderZanahoria" type="Button" parent="PanelCultivos/Panel8"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$10 x 1"
+
+[node name="Panel9" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 180.0
+offset_right = 313.0
+offset_bottom = 260.0
+
+[node name="Tomate3" type="Sprite2D" parent="PanelCultivos/Panel9"]
+position = Vector2(40, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_0mxn8")
+
+[node name="VenderMaiz" type="Button" parent="PanelCultivos/Panel9"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$10 x 1"
+
+[node name="Panel10" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 180.0
+offset_right = 423.0
+offset_bottom = 260.0
+
+[node name="Tomate4" type="Sprite2D" parent="PanelCultivos/Panel10"]
+position = Vector2(39, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_bb8ch")
+
+[node name="VenderCebolla" type="Button" parent="PanelCultivos/Panel10"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$10 x 1"
+
+[node name="Panel11" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 180.0
+offset_right = 533.0
+offset_bottom = 260.0
+
+[node name="Tomate5" type="Sprite2D" parent="PanelCultivos/Panel11"]
+position = Vector2(41, 41)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_txoyl")
+
+[node name="VenderBrocoli" type="Button" parent="PanelCultivos/Panel11"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$10 x 1"
+
+[node name="Panel12" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 563.0
+offset_top = 180.0
+offset_right = 643.0
+offset_bottom = 260.0
+
+[node name="Tomate6" type="Sprite2D" parent="PanelCultivos/Panel12"]
+position = Vector2(43, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_xrx38")
+
+[node name="VenderPimiento" type="Button" parent="PanelCultivos/Panel12"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$10 x 1"
+
+[node name="Tienda2" type="Label" parent="PanelCultivos"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -149.739
+offset_right = 33.5
+offset_bottom = -126.739
+grow_horizontal = 2
+grow_vertical = 2
+text = "Comprar"
+
+[node name="Tienda" type="Label" parent="PanelCultivos"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = 1.26077
+offset_right = 27.0
+offset_bottom = 24.2608
+grow_horizontal = 2
+grow_vertical = 2
+text = "Vender"
+
+[node name="PanelArmas" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 25.0
+offset_top = 47.0
+offset_right = 685.0
+offset_bottom = 347.0
+
+[node name="Panel" type="Panel" parent="PanelArmas"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 30.0
+offset_right = 93.0
+offset_bottom = 110.0
+tooltip_text = "Escoba +1 daño"
+
+[node name="Tomate" type="Sprite2D" parent="PanelArmas/Panel"]
+position = Vector2(39, 37)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("8_qjpn3")
+
+[node name="ComprarEscoba" type="Button" parent="PanelArmas/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$1000"
+
+[node name="Panel2" type="Panel" parent="PanelArmas"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 30.0
+offset_right = 203.0
+offset_bottom = 110.0
+tooltip_text = "Bate +2 daño"
+
+[node name="Tomate2" type="Sprite2D" parent="PanelArmas/Panel2"]
+position = Vector2(40, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_x3h3o")
+
+[node name="ComprarBate" type="Button" parent="PanelArmas/Panel2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$2000"
+
+[node name="Panel3" type="Panel" parent="PanelArmas"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 30.0
+offset_right = 313.0
+offset_bottom = 110.0
+tooltip_text = "Remo +3 daño"
+
+[node name="Tomate3" type="Sprite2D" parent="PanelArmas/Panel3"]
+position = Vector2(40, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("10_ekb15")
+
+[node name="ComprarRemo" type="Button" parent="PanelArmas/Panel3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$3000"
+
+[node name="Panel4" type="Panel" parent="PanelArmas"]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 30.0
+offset_right = 423.0
+offset_bottom = 110.0
+tooltip_text = "Horquilla +4 daño"
+
+[node name="Tomate4" type="Sprite2D" parent="PanelArmas/Panel4"]
+position = Vector2(39, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_q0gbh")
+
+[node name="ComprarHorquilla" type="Button" parent="PanelArmas/Panel4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$4000"
+
+[node name="Panel5" type="Panel" parent="PanelArmas"]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 30.0
+offset_right = 533.0
+offset_bottom = 110.0
+tooltip_text = "Pala +5 daño"
+
+[node name="Tomate5" type="Sprite2D" parent="PanelArmas/Panel5"]
+position = Vector2(41, 41)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_24j01")
+
+[node name="ComprarPala" type="Button" parent="PanelArmas/Panel5"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$5000"
+
+[node name="Panel6" type="Panel" parent="PanelArmas"]
+layout_mode = 0
+offset_left = 563.0
+offset_top = 30.0
+offset_right = 643.0
+offset_bottom = 110.0
+tooltip_text = "Acha +8 daño"
+
+[node name="Tomate6" type="Sprite2D" parent="PanelArmas/Panel6"]
+position = Vector2(43, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("13_hugfn")
+
+[node name="ComprarAcha" type="Button" parent="PanelArmas/Panel6"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$8000"
+
+[node name="Panel7" type="Panel" parent="PanelArmas"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 168.0
+offset_right = 93.0
+offset_bottom = 248.0
+tooltip_text = "Liana +15 daño"
+
+[node name="Tomate" type="Sprite2D" parent="PanelArmas/Panel7"]
+position = Vector2(39, 37)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("14_ax4tm")
+
+[node name="VenderLiana22lr" type="Button" parent="PanelArmas/Panel7"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = 10.0
+offset_right = 35.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$15,000"
+
+[node name="Panel8" type="Panel" parent="PanelArmas"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 168.0
+offset_right = 203.0
+offset_bottom = 248.0
+tooltip_text = "Doca +23 daño"
+
+[node name="Tomate2" type="Sprite2D" parent="PanelArmas/Panel8"]
+position = Vector2(40, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("15_5ncpj")
+
+[node name="VenderDoca9mm" type="Button" parent="PanelArmas/Panel8"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = 10.0
+offset_right = 35.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$23,000"
+
+[node name="Panel9" type="Panel" parent="PanelArmas"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 168.0
+offset_right = 313.0
+offset_bottom = 248.0
+tooltip_text = "Boom +39 daño"
+
+[node name="Tomate3" type="Sprite2D" parent="PanelArmas/Panel9"]
+position = Vector2(40, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("16_dpj8n")
+
+[node name="VenderBoom9mm" type="Button" parent="PanelArmas/Panel9"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = 10.0
+offset_right = 35.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$38,500"
+
+[node name="Panel10" type="Panel" parent="PanelArmas"]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 168.0
+offset_right = 423.0
+offset_bottom = 248.0
+tooltip_text = "Aloe + 40 daño"
+
+[node name="Tomate4" type="Sprite2D" parent="PanelArmas/Panel10"]
+position = Vector2(39, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("17_f8nrp")
+
+[node name="VenderAloe9mm" type="Button" parent="PanelArmas/Panel10"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = 10.0
+offset_right = 35.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$40,000"
+
+[node name="Panel11" type="Panel" parent="PanelArmas"]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 168.0
+offset_right = 533.0
+offset_bottom = 248.0
+tooltip_text = "Engau +87 daño"
+
+[node name="Tomate5" type="Sprite2D" parent="PanelArmas/Panel11"]
+position = Vector2(41, 41)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("18_3ue7f")
+
+[node name="VenderEngau9mm" type="Button" parent="PanelArmas/Panel11"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = 10.0
+offset_right = 35.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$87,000"
+
+[node name="Panel12" type="Panel" parent="PanelArmas"]
+layout_mode = 0
+offset_left = 563.0
+offset_top = 168.0
+offset_right = 643.0
+offset_bottom = 248.0
+tooltip_text = "Pluto +130 daño"
+
+[node name="Tomate6" type="Sprite2D" parent="PanelArmas/Panel12"]
+position = Vector2(43, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("19_ls6t4")
+
+[node name="VenderPluto10mm" type="Button" parent="PanelArmas/Panel12"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = 10.0
+offset_right = 39.5
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$126,900"
+
+[node name="Tienda2" type="Label" parent="PanelArmas"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -149.739
+offset_right = 33.5
+offset_bottom = -126.739
+grow_horizontal = 2
+grow_vertical = 2
+text = "Comprar"
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 0
+anchor_left = 0.625884
+anchor_top = 0.0337838
+anchor_right = 0.968175
+anchor_bottom = 0.117568
+metadata/_edit_use_anchors_ = true
+
+[node name="modoTienda" type="Label" parent="Panel3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.371901
+anchor_top = 0.129032
+anchor_right = 0.628099
+anchor_bottom = 0.870968
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cultivos"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Panel3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.0743802
+anchor_bottom = 1.0
+grow_vertical = 2
+text = "<"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="Panel3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.92562
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+text = ">"
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(350.5, 172.5)
+shape = SubResource("RectangleShape2D_lsjcp")
+
+[connection signal="pressed" from="PanelCultivos/Panel/ComprarTomate" to="." method="_on_comprar_tomate_pressed"]
+[connection signal="pressed" from="PanelCultivos/Panel2/ComprarZanahoria" to="." method="_on_comprar_zanahoria_pressed"]
+[connection signal="pressed" from="PanelCultivos/Panel3/ComprarMaiz" to="." method="_on_comprar_maiz_pressed"]
+[connection signal="pressed" from="PanelCultivos/Panel4/ComprarCebolla" to="." method="_on_comprar_cebolla_pressed"]
+[connection signal="pressed" from="PanelCultivos/Panel5/ComprarBrocoli" to="." method="_on_comprar_brocoli_pressed"]
+[connection signal="pressed" from="PanelCultivos/Panel6/ComprarPimiento" to="." method="_on_comprar_pimiento_pressed"]
+[connection signal="pressed" from="PanelCultivos/Panel7/VenderTomate" to="." method="_on_vender_tomate_pressed"]
+[connection signal="pressed" from="PanelCultivos/Panel8/VenderZanahoria" to="." method="_on_vender_zanahoria_pressed"]
+[connection signal="pressed" from="PanelCultivos/Panel9/VenderMaiz" to="." method="_on_vender_maiz_pressed"]
+[connection signal="pressed" from="PanelCultivos/Panel10/VenderCebolla" to="." method="_on_vender_cebolla_pressed"]
+[connection signal="pressed" from="PanelCultivos/Panel11/VenderBrocoli" to="." method="_on_vender_brocoli_pressed"]
+[connection signal="pressed" from="PanelCultivos/Panel12/VenderPimiento" to="." method="_on_vender_pimiento_pressed"]
+[connection signal="pressed" from="PanelArmas/Panel/ComprarEscoba" to="." method="_on_comprar_escoba_pressed"]
+[connection signal="pressed" from="PanelArmas/Panel2/ComprarBate" to="." method="_on_comprar_bate_pressed"]
+[connection signal="pressed" from="PanelArmas/Panel3/ComprarRemo" to="." method="_on_comprar_remo_pressed"]
+[connection signal="pressed" from="PanelArmas/Panel4/ComprarHorquilla" to="." method="_on_comprar_horquilla_pressed"]
+[connection signal="pressed" from="PanelArmas/Panel5/ComprarPala" to="." method="_on_comprar_pala_pressed"]
+[connection signal="pressed" from="PanelArmas/Panel6/ComprarAcha" to="." method="_on_comprar_acha_pressed"]
+[connection signal="pressed" from="PanelArmas/Panel7/VenderLiana22lr" to="." method="_on_vender_liana_22_lr_pressed"]
+[connection signal="pressed" from="PanelArmas/Panel8/VenderDoca9mm" to="." method="_on_vender_doca_9_mm_pressed"]
+[connection signal="pressed" from="PanelArmas/Panel9/VenderBoom9mm" to="." method="_on_vender_boom_9_mm_pressed"]
+[connection signal="pressed" from="PanelArmas/Panel10/VenderAloe9mm" to="." method="_on_vender_aloe_9_mm_pressed"]
+[connection signal="pressed" from="PanelArmas/Panel11/VenderEngau9mm" to="." method="_on_vender_engau_9_mm_pressed"]
+[connection signal="pressed" from="PanelArmas/Panel12/VenderPluto10mm" to="." method="_on_vender_pluto_10_mm_pressed"]
+[connection signal="pressed" from="Panel3/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel3/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

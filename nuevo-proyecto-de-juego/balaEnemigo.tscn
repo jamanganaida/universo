@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://80mc2lkhdvwa"]
+
+[ext_resource type="Script" path="res://balaEnemigo.gd" id="1_joch4"]
+[ext_resource type="Texture2D" uid="uid://b24rfobcvgjx3" path="res://bala.png" id="2_1vx2h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dir3r"]
+radius = 28.0
+
+[node name="balaEnemigo" type="Area2D"]
+collision_layer = 64
+collision_priority = 2.0
+script = ExtResource("1_joch4")
+speed = 1500
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dir3r")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 0.541016, 0.510417, 1)
+position = Vector2(-0.104998, 0)
+scale = Vector2(0.458347, 0.38)
+texture = ExtResource("2_1vx2h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

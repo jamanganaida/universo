@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://boc3ejmr5ktcx"]
+
+[ext_resource type="Script" path="res://area_de_colision_alta.gd" id="1_j4cke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1b4pm"]
+size = Vector2(12000, 30)
+
+[node name="AreaDeColisionBaja" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_j4cke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1b4pm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

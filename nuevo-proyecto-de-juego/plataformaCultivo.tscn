@@ -1,0 +1,100 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8x8qjjac2rwo"]
+
+[ext_resource type="Script" path="res://plataformaCultivo.gd" id="1_5yb5h"]
+[ext_resource type="Texture2D" uid="uid://q7d0r4u6tdg6" path="res://Plataforma.png" id="2_4yplr"]
+[ext_resource type="PackedScene" uid="uid://b5hijcqinnw2o" path="res://monedas.tscn" id="2_nu7sv"]
+[ext_resource type="PackedScene" uid="uid://cg54xpjpxdop8" path="res://verdura.tscn" id="3_ucitw"]
+[ext_resource type="Texture2D" uid="uid://dlm7uphqdj1lv" path="res://planta_ojos.png" id="5_fxnxh"]
+[ext_resource type="Texture2D" uid="uid://56623b73yw4s" path="res://M_Minimapa.png" id="6_4ncym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prhsw"]
+size = Vector2(6.89655, 35)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xsfy"]
+radius = 14.0
+height = 92.0
+
+[sub_resource type="Animation" id="Animation_dd440"]
+resource_name = "activo"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D/Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.866667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(3, 3), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.866667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.298039), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e4xrp"]
+_data = {
+"activo": SubResource("Animation_dd440")
+}
+
+[node name="plataforma" type="StaticBody2D"]
+top_level = true
+collision_layer = 2
+input_pickable = true
+script = ExtResource("1_5yb5h")
+moneda = ExtResource("2_nu7sv")
+verdura = ExtResource("3_ucitw")
+metadata/_edit_vertical_guides_ = [-47.0]
+metadata/_edit_horizontal_guides_ = [-12.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.588542, 0.499647, 0.499647, 1)
+position = Vector2(-1.19209e-07, -2.71051e-20)
+texture = ExtResource("2_4yplr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.8147e-06, 5.5)
+scale = Vector2(12.76, 1)
+shape = SubResource("RectangleShape2D_prhsw")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -26)
+shape = SubResource("CapsuleShape2D_1xsfy")
+
+[node name="PlantaOjos" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -22)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_fxnxh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+modulate = Color(1, 1, 1, 0.448555)
+position = Vector2(0, -51)
+scale = Vector2(2.57115, 2.57115)
+texture = ExtResource("6_4ncym")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e4xrp")
+}
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

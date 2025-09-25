@@ -1,0 +1,276 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxfuc60f5y6v7"]
+
+[ext_resource type="Texture2D" uid="uid://i2kw4yyni0s2" path="res://curaPlus.png" id="1_6cs48"]
+[ext_resource type="Script" path="res://menu_mejoras.gd" id="1_c0y7a"]
+[ext_resource type="Texture2D" uid="uid://wpoiswp444me" path="res://dangerMas.png" id="2_iw0jd"]
+[ext_resource type="Texture2D" uid="uid://buemlrd0sgquh" path="res://pantalla_curativa.png" id="3_osgwb"]
+[ext_resource type="Texture2D" uid="uid://ckthss0s16b5r" path="res://velatak.png" id="4_rv88w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7x52"]
+size = Vector2(1144, 640)
+
+[node name="Panel" type="Panel"]
+custom_minimum_size = Vector2(700, 370)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -353.5
+offset_top = -174.5
+offset_right = 353.5
+offset_bottom = 195.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_c0y7a")
+metadata/_edit_use_anchors_ = true
+
+[node name="titulo" type="Panel" parent="."]
+custom_minimum_size = Vector2(272, 25)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.170438
+anchor_top = 0.0272206
+anchor_right = 0.877652
+anchor_bottom = 0.0988539
+offset_left = -95.4997
+offset_top = 0.928378
+offset_right = -323.5
+offset_bottom = -0.575943
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="mejoras" type="Label" parent="titulo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -11.5
+offset_right = 26.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mejoras"
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 47.0
+offset_right = 685.0
+offset_bottom = 347.0
+
+[node name="personaje" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -149.739
+offset_right = 37.5
+offset_bottom = -126.739
+grow_horizontal = 2
+grow_vertical = 2
+text = "Personaje"
+
+[node name="MejoraVida" type="Panel" parent="Panel2"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 30.0
+offset_right = 328.0
+offset_bottom = 148.0
+
+[node name="Panel" type="Panel" parent="Panel2/MejoraVida"]
+layout_mode = 0
+offset_left = 9.5
+offset_top = 5.0
+offset_right = 89.5
+offset_bottom = 85.0
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/MejoraVida/Panel"]
+position = Vector2(39, 37)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("1_6cs48")
+
+[node name="VidaPlus" type="Button" parent="Panel2/MejoraVida"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.392063
+anchor_top = 0.690678
+anchor_right = 0.588889
+anchor_bottom = 0.95339
+grow_horizontal = 2
+grow_vertical = 0
+text = "$50 x 1"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel2/MejoraVida"]
+layout_mode = 0
+offset_left = 101.5
+offset_top = 7.0
+offset_right = 295.5
+offset_bottom = 82.0
+text = "VidaPlus: Mejora la vida maxima del personaje."
+autowrap_mode = 2
+
+[node name="MejoraDaño" type="Panel" parent="Panel2"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 30.0
+offset_right = 646.0
+offset_bottom = 148.0
+
+[node name="Panel" type="Panel" parent="Panel2/MejoraDaño"]
+layout_mode = 0
+offset_left = 9.5
+offset_top = 5.0
+offset_right = 89.5
+offset_bottom = 85.0
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/MejoraDaño/Panel"]
+position = Vector2(39, 37)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_iw0jd")
+
+[node name="DangerMás" type="Button" parent="Panel2/MejoraDaño"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.5
+offset_top = -37.0
+offset_right = 27.5
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$50 x 1"
+
+[node name="Label" type="Label" parent="Panel2/MejoraDaño"]
+layout_mode = 0
+offset_left = 101.5
+offset_top = 7.0
+offset_right = 295.5
+offset_bottom = 82.0
+text = "DangerMás: Mejora el daño del personaje."
+autowrap_mode = 2
+
+[node name="Tienda" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = 1.26077
+offset_right = 44.5
+offset_bottom = 24.2608
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tecnologias"
+
+[node name="Mejorapantalla" type="Panel" parent="Panel2"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 178.0
+offset_right = 328.0
+offset_bottom = 296.0
+
+[node name="Panel" type="Panel" parent="Panel2/Mejorapantalla"]
+layout_mode = 0
+offset_left = 9.5
+offset_top = 5.0
+offset_right = 89.5
+offset_bottom = 85.0
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/Mejorapantalla/Panel"]
+position = Vector2(39, 37)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_osgwb")
+
+[node name="pantallaCura" type="Button" parent="Panel2/Mejorapantalla"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.5
+offset_top = -37.0
+offset_right = 27.5
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$50 x 1"
+
+[node name="Label" type="Label" parent="Panel2/Mejorapantalla"]
+layout_mode = 0
+offset_left = 101.5
+offset_top = 7.0
+offset_right = 295.5
+offset_bottom = 82.0
+text = "Pantalla de curación: Restaura tu vida por segundos."
+autowrap_mode = 2
+
+[node name="Mejoravelataque" type="Panel" parent="Panel2"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 178.0
+offset_right = 646.0
+offset_bottom = 296.0
+
+[node name="Panel" type="Panel" parent="Panel2/Mejoravelataque"]
+layout_mode = 0
+offset_left = 9.5
+offset_top = 5.0
+offset_right = 89.5
+offset_bottom = 85.0
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/Mejoravelataque/Panel"]
+position = Vector2(39, 37)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_rv88w")
+
+[node name="VelocidadAtaque" type="Button" parent="Panel2/Mejoravelataque"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.5
+offset_top = -37.0
+offset_right = 27.5
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$50 x 1"
+
+[node name="Label" type="Label" parent="Panel2/Mejoravelataque"]
+layout_mode = 0
+offset_left = 101.5
+offset_top = 7.0
+offset_right = 295.5
+offset_bottom = 82.0
+text = "Velocidad de ataque: Aumenta tus ataques por segundo."
+autowrap_mode = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(350.5, 172.5)
+shape = SubResource("RectangleShape2D_s7x52")
+
+[connection signal="pressed" from="Panel2/MejoraVida/VidaPlus" to="." method="_on_vida_plus_pressed"]
+[connection signal="pressed" from="Panel2/MejoraDaño/DangerMás" to="." method="_on_danger_más_pressed"]
+[connection signal="pressed" from="Panel2/Mejorapantalla/pantallaCura" to="." method="_on_pantalla_cura_pressed"]
+[connection signal="pressed" from="Panel2/Mejoravelataque/VelocidadAtaque" to="." method="_on_velocidad_ataque_pressed"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

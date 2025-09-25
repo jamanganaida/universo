@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5hijcqinnw2o"]
+
+[ext_resource type="Script" path="res://monedas.gd" id="1_cyjhk"]
+[ext_resource type="Texture2D" uid="uid://6a6dyjkr5wv7" path="res://moneda2.png" id="2_dx2rw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xo225"]
+radius = 30.0167
+
+[sub_resource type="Animation" id="Animation_8yra2"]
+resource_name = "movimiento"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.5, 0.766667, 0.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 5), Vector2(0, 0), Vector2(0, -5), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ph4pl"]
+_data = {
+"movimiento": SubResource("Animation_8yra2")
+}
+
+[node name="monedas" type="Area2D" groups=["monedas"]]
+collision_layer = 4
+script = ExtResource("1_cyjhk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.96875, 1, 0, 1)
+position = Vector2(0, 1.52481)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_dx2rw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xo225")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ph4pl")
+}
+
+[connection signal="body_entered" from="." to="." method="player_toca"]

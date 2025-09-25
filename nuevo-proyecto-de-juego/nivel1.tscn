@@ -1,0 +1,110 @@
+[gd_scene load_steps=21 format=3 uid="uid://bhosswyman46i"]
+
+[ext_resource type="Script" path="res://casa.gd" id="1_ki74d"]
+[ext_resource type="Texture2D" uid="uid://q7d0r4u6tdg6" path="res://Plataforma.png" id="2_62ual"]
+[ext_resource type="PackedScene" uid="uid://cdhiqncku6l4e" path="res://personaje.tscn" id="3_6qxyf"]
+[ext_resource type="Texture2D" uid="uid://cudaogh37wjlf" path="res://P_Minimapa.png" id="3_c0w83"]
+[ext_resource type="PackedScene" uid="uid://62epbqipjcp0" path="res://plataforma.tscn" id="4_f7wgc"]
+[ext_resource type="PackedScene" uid="uid://bug4fh3ypl043" path="res://area_de_colision_baja.tscn" id="4_t130o"]
+[ext_resource type="PackedScene" uid="uid://cmn7la0slpon2" path="res://puerta_verde.tscn" id="5_k4ti5"]
+[ext_resource type="PackedScene" uid="uid://coxgfjrije4ds" path="res://menu_tienda.tscn" id="6_2iks2"]
+[ext_resource type="PackedScene" uid="uid://cxfuc60f5y6v7" path="res://menuMejoras.tscn" id="7_77ej5"]
+[ext_resource type="PackedScene" uid="uid://bywsbxacp47sq" path="res://interfaz_casa.tscn" id="7_tnmv1"]
+[ext_resource type="PackedScene" uid="uid://dnn732axcuwgd" path="res://menu_construccion.tscn" id="8_gekob"]
+[ext_resource type="Texture2D" uid="uid://3j78o1y027j5" path="res://fondo.png" id="8_v30mo"]
+[ext_resource type="PackedScene" uid="uid://d0ngiaofjn0vg" path="res://area_izquierda.tscn" id="9_ck4bf"]
+[ext_resource type="PackedScene" uid="uid://bhsyiqtjsfsmo" path="res://menuPersonajeEquipamiento.tscn" id="9_s07xx"]
+[ext_resource type="PackedScene" uid="uid://dubw01dh2fpjv" path="res://area_derecha.tscn" id="10_e7dfr"]
+[ext_resource type="PackedScene" uid="uid://dq6as0aepc2ld" path="res://pantallita.tscn" id="11_sv74y"]
+[ext_resource type="PackedScene" uid="uid://dlcjeowox73ik" path="res://puerta_roja.tscn" id="14_5nrj1"]
+[ext_resource type="PackedScene" uid="uid://dgpy42d0g364x" path="res://pantalla_curativa.tscn" id="15_3k4tl"]
+[ext_resource type="Texture2D" uid="uid://orpfbesx8f6w" path="res://alerta.png" id="16_7k6hk"]
+[ext_resource type="PackedScene" uid="uid://boc3ejmr5ktcx" path="res://area_de_colision_alta.tscn" id="16_ajsxm"]
+
+[node name="Nivel1" type="Node2D"]
+script = ExtResource("1_ki74d")
+imagen_plataforma = ExtResource("2_62ual")
+imagen_personaje = ExtResource("3_c0w83")
+plataforma = ExtResource("4_f7wgc")
+puertaVerde = ExtResource("5_k4ti5")
+menutienda = ExtResource("6_2iks2")
+menumejoras = ExtResource("7_77ej5")
+menuconstruccion = ExtResource("8_gekob")
+menupersonaje = ExtResource("9_s07xx")
+metadata/_edit_vertical_guides_ = [-6000.0, 6000.0]
+metadata/_edit_horizontal_guides_ = [6048.0, -6008.0, 8.0]
+
+[node name="personaje" parent="." instance=ExtResource("3_6qxyf")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("7_tnmv1")]
+
+[node name="AreaDeColisionBaja" parent="." instance=ExtResource("4_t130o")]
+position = Vector2(0, 6000)
+
+[node name="AreaDeColisionAlta" parent="." instance=ExtResource("16_ajsxm")]
+position = Vector2(0, -6000)
+
+[node name="AreaIzquierda" parent="." instance=ExtResource("9_ck4bf")]
+position = Vector2(-6000, 0)
+
+[node name="AreaDerecha" parent="." instance=ExtResource("10_e7dfr")]
+position = Vector2(6000, 0)
+
+[node name="ContenedorPlataformas" type="Node2D" parent="."]
+
+[node name="plataforma3" parent="ContenedorPlataformas" instance=ExtResource("4_f7wgc")]
+position = Vector2(-141, 34)
+inmobil = true
+
+[node name="plataforma2" parent="ContenedorPlataformas" instance=ExtResource("4_f7wgc")]
+position = Vector2(263, 36)
+inmobil = true
+
+[node name="plataforma" parent="ContenedorPlataformas" instance=ExtResource("4_f7wgc")]
+position = Vector2(1, 34)
+inmobil = true
+
+[node name="pantallita" parent="." instance=ExtResource("11_sv74y")]
+
+[node name="Fondo" type="Sprite2D" parent="."]
+modulate = Color(0.40625, 0.355469, 0.355469, 1)
+z_index = -10
+scale = Vector2(7, 7)
+texture = ExtResource("8_v30mo")
+
+[node name="puerta_roja" parent="." instance=ExtResource("14_5nrj1")]
+position = Vector2(263, 36)
+
+[node name="pantalla_curativa" parent="." instance=ExtResource("15_3k4tl")]
+position = Vector2(-142, -5)
+
+[node name="Alerta" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(294, 16)
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("16_7k6hk")
+
+[node name="ScartelIndicacion" type="ColorRect" parent="."]
+visible = false
+offset_left = -202.0
+offset_top = -98.0
+offset_right = -66.0
+offset_bottom = -56.0
+color = Color(0.239583, 0.0885959, 0.0885959, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ScartelIndicacion"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 2.0
+offset_right = 103.0
+offset_bottom = 42.0
+rotation = 0.785398
+color = Color(0.239583, 0.0885959, 0.0885959, 1)
+
+[node name="Label" type="Label" parent="ScartelIndicacion"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 9.0
+offset_right = 134.0
+offset_bottom = 32.0
+text = "Cura tu vida Aquí"

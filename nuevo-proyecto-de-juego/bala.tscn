@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://o7cyn77slktg"]
+
+[ext_resource type="Script" path="res://bala.gd" id="1_ovrgl"]
+[ext_resource type="Texture2D" uid="uid://b24rfobcvgjx3" path="res://bala.png" id="2_b7yg6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dir3r"]
+
+[node name="bala" type="Area2D"]
+collision_layer = 16
+collision_mask = 32
+collision_priority = 2.0
+script = ExtResource("1_ovrgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dir3r")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("2_b7yg6")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

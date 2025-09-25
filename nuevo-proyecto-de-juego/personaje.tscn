@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=3 uid="uid://cdhiqncku6l4e"]
+
+[ext_resource type="Script" path="res://personaje.gd" id="1_t20t0"]
+[ext_resource type="Texture2D" uid="uid://djtlmhbojp683" path="res://personaje.png" id="2_0o7am"]
+[ext_resource type="Texture2D" uid="uid://b13l638gy1xci" path="res://personaje_impulso.png" id="2_1dvjj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qg64v"]
+radius = 16.0
+height = 37.0
+
+[sub_resource type="Animation" id="Animation_4rcsi"]
+resource_name = "derecha"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_tf3a5"]
+resource_name = "izquierda"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6s1wu"]
+resource_name = "nada"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_0o7am")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gcl5v"]
+resource_name = "volar"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_1dvjj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 4), Vector2(0, 0), Vector2(0, 2), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ed0vs"]
+_data = {
+"derecha": SubResource("Animation_4rcsi"),
+"izquierda": SubResource("Animation_tf3a5"),
+"nada": SubResource("Animation_6s1wu"),
+"volar": SubResource("Animation_gcl5v")
+}
+
+[node name="personaje" type="CharacterBody2D"]
+z_index = 1
+collision_mask = 238
+script = ExtResource("1_t20t0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qg64v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_0o7am")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ed0vs")
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.556, 0.556)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
