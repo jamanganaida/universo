@@ -3,9 +3,7 @@ extends CharacterBody2D
 
 @export var bullet_scene = preload("res://bala.tscn")
 var SPEED = 250.0
-var daño = 1
 const JUMP_VELOCITY = -500.0
-var velocidad_de_disparo = 1#cada3segundo
 @warning_ignore("unused_signal")
 signal movimiento
 @onready var animacion = $AnimationPlayer
@@ -13,8 +11,9 @@ signal movimiento
 @onready var tiempo = $Timer
 var disparar = true
 var move = true
+
 func _physics_process(_delta: float) -> void:
-	tiempo.wait_time = velocidad_de_disparo
+	tiempo.wait_time = 2 - (Datos.velocidadDisparo * 0.1)
 	emit_signal("movimiento")
 	if not is_on_floor():
 		if velocity.y <= 1000:
@@ -43,7 +42,7 @@ func _physics_process(_delta: float) -> void:
 func disparar_al_mouse():
 	if disparar:
 		var bullet = bullet_scene.instantiate()
-		bullet.daño += daño
+		bullet.daño += Datos.daño + Datos.daño_mejora
 		bullet.global_position = global_position  # Sale desde el personaje
 		bullet.direction = (get_global_mouse_position() - global_position).normalized()
 		get_tree().current_scene.add_child(bullet)

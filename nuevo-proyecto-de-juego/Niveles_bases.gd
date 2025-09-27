@@ -73,7 +73,7 @@ func actualizar_datos():
 func generar_nivel(lista):
 	var contador = 0
 	var pongoPuertaVerde = false
-	var numRandom = randi_range(0, 4)
+	var numRandom = randi_range(0, 2)
 	var contadorCofres = 0
 	var numRandomCofres = randi_range(0, 4)
 	if numRandom == 2:

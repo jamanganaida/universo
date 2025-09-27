@@ -1,0 +1,381 @@
+[gd_scene load_steps=14 format=3 uid="uid://xbdosdbfgk8a"]
+
+[ext_resource type="Texture2D" uid="uid://cupd33jq0ua3a" path="res://sopa_ 1_jugo_tomate.png" id="1_uycrg"]
+[ext_resource type="Script" path="res://menu_cocina.gd" id="1_v4kpn"]
+[ext_resource type="Texture2D" uid="uid://cf1pgh1uihay3" path="res://sopa_ 2_jugo_brocoli.png" id="2_p2kv4"]
+[ext_resource type="Texture2D" uid="uid://fod7pac4i02d" path="res://sopa_ 3_tomate_con_brocoli.png" id="3_rcdw4"]
+[ext_resource type="Texture2D" uid="uid://cr3xxeq687ynv" path="res://sopa_ 4_zanahoria_con_brocoli.png" id="4_8hpts"]
+[ext_resource type="Texture2D" uid="uid://qye6vdi5d4wo" path="res://sopa_5_ensalada.png" id="5_p3sge"]
+[ext_resource type="Texture2D" uid="uid://l6i8b0w8g8u7" path="res://sopa_ 6_guiso.png" id="6_lqy5w"]
+[ext_resource type="Texture2D" uid="uid://btuffkpxi41e3" path="res://tomate.png" id="7_8svew"]
+[ext_resource type="Texture2D" uid="uid://bsvgrqsib4dge" path="res://brocoli.png" id="8_2agpp"]
+[ext_resource type="Texture2D" uid="uid://bd3fijdv6wqgl" path="res://cebolla.png" id="9_tglyc"]
+[ext_resource type="Texture2D" uid="uid://c8dh41o4xirkm" path="res://maiz.png" id="10_expbw"]
+[ext_resource type="Texture2D" uid="uid://dmydok86j3cq0" path="res://pimiento.png" id="11_5bmui"]
+[ext_resource type="Texture2D" uid="uid://cavnk8ype1sfh" path="res://zanahoria.png" id="12_a0g7p"]
+
+[node name="Panel" type="Panel"]
+anchors_preset = -1
+anchor_left = 0.134549
+anchor_top = 0.0385802
+anchor_right = 0.87066
+anchor_bottom = 0.967593
+size_flags_vertical = 4
+script = ExtResource("1_v4kpn")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0613202
+anchor_top = 0.0132891
+anchor_right = 0.294811
+anchor_bottom = 0.259136
+offset_right = 1.52588e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Imagen" type="Sprite2D" parent="Panel"]
+position = Vector2(70, 75)
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+anchor_left = 0.350899
+anchor_top = 0.0336448
+anchor_right = 0.958868
+anchor_bottom = 0.957009
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel3" type="Panel" parent="Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0678876
+anchor_top = 0.0521709
+anchor_right = 0.302585
+anchor_bottom = 0.266251
+metadata/_edit_use_anchors_ = true
+
+[node name="Sopa1JugoTomate" type="Sprite2D" parent="Panel2/Panel3"]
+position = Vector2(45, 43)
+texture = ExtResource("1_uycrg")
+
+[node name="Label" type="Label" parent="Panel2/Panel3"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 92.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 10
+text = "Juego de Tomate"
+horizontal_alignment = 1
+
+[node name="Panel4" type="Panel" parent="Panel2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.399577
+anchor_top = 0.0516194
+anchor_right = 0.59408
+anchor_bottom = 0.233806
+offset_right = 20.7225
+offset_bottom = 17.7288
+metadata/_edit_use_anchors_ = true
+
+[node name="Sopa2JugoBrocoli" type="Sprite2D" parent="Panel2/Panel4"]
+position = Vector2(46, 46)
+texture = ExtResource("2_p2kv4")
+
+[node name="Label2" type="Label" parent="Panel2/Panel4"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 92.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 10
+text = "Juego de Brocoli"
+horizontal_alignment = 1
+
+[node name="Panel5" type="Panel" parent="Panel2"]
+layout_mode = 0
+anchor_left = 0.729387
+anchor_top = 0.0516194
+anchor_right = 0.92389
+anchor_bottom = 0.233806
+offset_right = 20.7225
+offset_bottom = 17.7288
+metadata/_edit_use_anchors_ = true
+
+[node name="Sopa3TomateConBrocoli" type="Sprite2D" parent="Panel2/Panel5"]
+position = Vector2(47, 44)
+texture = ExtResource("3_rcdw4")
+
+[node name="Label3" type="Label" parent="Panel2/Panel5"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 92.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 10
+text = "Sopa de Tomate"
+horizontal_alignment = 1
+
+[node name="Panel6" type="Panel" parent="Panel2"]
+layout_mode = 0
+anchor_left = 0.0676533
+anchor_top = 0.324899
+anchor_right = 0.262156
+anchor_bottom = 0.507085
+offset_right = 20.7227
+offset_bottom = 17.7291
+metadata/_edit_use_anchors_ = true
+
+[node name="Sopa4ZanahoriaConBrocoli" type="Sprite2D" parent="Panel2/Panel6"]
+position = Vector2(45, 49)
+texture = ExtResource("4_8hpts")
+
+[node name="Label4" type="Label" parent="Panel2/Panel6"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 92.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 10
+text = "Sopa de Zanahoria"
+horizontal_alignment = 1
+
+[node name="Panel7" type="Panel" parent="Panel2"]
+layout_mode = 0
+anchor_left = 0.399577
+anchor_top = 0.322874
+anchor_right = 0.59408
+anchor_bottom = 0.505061
+offset_right = 20.7225
+offset_bottom = 17.7285
+metadata/_edit_use_anchors_ = true
+
+[node name="Sopa5Ensalada" type="Sprite2D" parent="Panel2/Panel7"]
+position = Vector2(48, 47)
+texture = ExtResource("5_p3sge")
+
+[node name="Label5" type="Label" parent="Panel2/Panel7"]
+layout_mode = 0
+offset_top = 97.0
+offset_right = 92.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 10
+text = "Ensalada Mixta"
+horizontal_alignment = 1
+
+[node name="Panel8" type="Panel" parent="Panel2"]
+layout_mode = 0
+anchor_left = 0.729387
+anchor_top = 0.328947
+anchor_right = 0.92389
+anchor_bottom = 0.511134
+offset_right = 20.7225
+offset_bottom = 17.7285
+metadata/_edit_use_anchors_ = true
+
+[node name="Sopa6Guiso" type="Sprite2D" parent="Panel2/Panel8"]
+position = Vector2(47, 49)
+texture = ExtResource("6_lqy5w")
+
+[node name="Label6" type="Label" parent="Panel2/Panel8"]
+layout_mode = 0
+offset_top = 94.0
+offset_right = 92.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 10
+text = "Guiso Completo"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Panel2"]
+layout_mode = 0
+anchor_left = 0.0443975
+anchor_top = 0.617409
+anchor_right = 0.966173
+anchor_bottom = 0.965587
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Panel2/Panel"]
+layout_mode = 0
+anchor_left = 0.0550459
+anchor_top = 0.334302
+anchor_right = 0.146789
+anchor_bottom = 0.56686
+metadata/_edit_use_anchors_ = true
+
+[node name="Tomate" type="Sprite2D" parent="Panel2/Panel/Panel"]
+position = Vector2(25, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_8svew")
+
+[node name="tomate" type="Label" parent="Panel2/Panel/Panel"]
+layout_mode = 0
+offset_top = 52.0
+offset_right = 57.0
+offset_bottom = 75.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="Panel2" type="Panel" parent="Panel2/Panel"]
+layout_mode = 0
+anchor_left = 0.201835
+anchor_top = 0.334302
+anchor_right = 0.293578
+anchor_bottom = 0.56686
+metadata/_edit_use_anchors_ = true
+
+[node name="Tomate2" type="Sprite2D" parent="Panel2/Panel/Panel2"]
+position = Vector2(28, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_2agpp")
+
+[node name="brocoli" type="Label" parent="Panel2/Panel/Panel2"]
+layout_mode = 0
+offset_top = 52.0
+offset_right = 60.0
+offset_bottom = 75.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="Panel3" type="Panel" parent="Panel2/Panel"]
+layout_mode = 0
+anchor_left = 0.357798
+anchor_top = 0.334302
+anchor_right = 0.449541
+anchor_bottom = 0.56686
+metadata/_edit_use_anchors_ = true
+
+[node name="Tomate3" type="Sprite2D" parent="Panel2/Panel/Panel3"]
+position = Vector2(26, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_tglyc")
+
+[node name="cebolla" type="Label" parent="Panel2/Panel/Panel3"]
+layout_mode = 0
+offset_top = 52.0
+offset_right = 60.0
+offset_bottom = 75.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="Panel4" type="Panel" parent="Panel2/Panel"]
+layout_mode = 0
+anchor_left = 0.525229
+anchor_top = 0.334302
+anchor_right = 0.616973
+anchor_bottom = 0.56686
+offset_left = 1.52588e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Tomate4" type="Sprite2D" parent="Panel2/Panel/Panel4"]
+position = Vector2(17, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_expbw")
+
+[node name="maiz" type="Label" parent="Panel2/Panel/Panel4"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 52.0
+offset_right = 47.0
+offset_bottom = 75.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="Panel5" type="Panel" parent="Panel2/Panel"]
+layout_mode = 0
+anchor_left = 0.697248
+anchor_top = 0.334302
+anchor_right = 0.788991
+anchor_bottom = 0.56686
+metadata/_edit_use_anchors_ = true
+
+[node name="Tomate5" type="Sprite2D" parent="Panel2/Panel/Panel5"]
+position = Vector2(13, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_5bmui")
+
+[node name="pimiento" type="Label" parent="Panel2/Panel/Panel5"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = 52.0
+offset_right = 40.0
+offset_bottom = 75.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="Panel6" type="Panel" parent="Panel2/Panel"]
+layout_mode = 0
+anchor_left = 0.862385
+anchor_top = 0.334302
+anchor_right = 0.954128
+anchor_bottom = 0.56686
+metadata/_edit_use_anchors_ = true
+
+[node name="Tomate6" type="Sprite2D" parent="Panel2/Panel/Panel6"]
+position = Vector2(10, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_a0g7p")
+
+[node name="zanahoria" type="Label" parent="Panel2/Panel/Panel6"]
+layout_mode = 0
+offset_left = -22.0
+offset_top = 51.0
+offset_right = 38.0
+offset_bottom = 74.0
+text = "0"
+horizontal_alignment = 1
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 0
+anchor_left = 0.0321336
+anchor_top = 0.272897
+anchor_right = 0.31748
+anchor_bottom = 0.848598
+metadata/_edit_use_anchors_ = true
+
+[node name="Nombre" type="Label" parent="Panel3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0330614
+anchor_top = 0.0519372
+anchor_right = 1.00837
+anchor_bottom = 0.118301
+text = "nombre"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Ingredientes" type="Label" parent="Panel3"]
+layout_mode = 0
+anchor_left = 0.0454594
+anchor_top = 0.164468
+anchor_right = 0.871994
+anchor_bottom = 0.5338
+offset_bottom = -1.52588e-05
+text = "Ingredientes: "
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Efecto" type="Label" parent="Panel3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0454595
+anchor_top = 0.640559
+anchor_right = 0.859598
+anchor_bottom = 0.85985
+text = "Efecto: "
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.117925
+anchor_top = 0.766611
+anchor_right = 0.221698
+anchor_bottom = 0.818106
+disabled = true
+text = "Preparar"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="gui_input" from="Panel2/Panel3" to="." method="_on_panel_3_gui_input"]
+[connection signal="gui_input" from="Panel2/Panel4" to="." method="_on_panel_4_gui_input"]
+[connection signal="gui_input" from="Panel2/Panel5" to="." method="_on_panel_5_gui_input"]
+[connection signal="gui_input" from="Panel2/Panel6" to="." method="_on_panel_6_gui_input"]
+[connection signal="gui_input" from="Panel2/Panel7" to="." method="_on_panel_7_gui_input"]
+[connection signal="gui_input" from="Panel2/Panel8" to="." method="_on_panel_8_gui_input"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

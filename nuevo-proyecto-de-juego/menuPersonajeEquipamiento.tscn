@@ -178,7 +178,7 @@ anchor_right = 0.960747
 anchor_bottom = 0.916569
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
+[node name="vida" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 25.0
@@ -186,7 +186,7 @@ offset_right = 57.0
 offset_bottom = 48.0
 text = "Vida:"
 
-[node name="Label2" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
+[node name="daño" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
 layout_mode = 0
 offset_left = 16.9998
 offset_top = 51.0
@@ -194,7 +194,7 @@ offset_right = 98.9998
 offset_bottom = 74.0
 text = "Daño ATQ:"
 
-[node name="Label3" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
+[node name="vel-atq" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
 layout_mode = 0
 offset_left = 16.9998
 offset_top = 76.0
@@ -202,21 +202,21 @@ offset_right = 133.0
 offset_bottom = 99.0
 text = "Velocidad ATQ:"
 
-[node name="Label4" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
+[node name="proteccion_atq" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
 layout_mode = 0
 offset_left = 16.9998
 offset_top = 103.0
 offset_right = 133.0
 offset_bottom = 126.0
-text = "Habilidad:"
+text = "Proteccion ATQ"
 
-[node name="Label5" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
+[node name="extras" type="Label" parent="Panel2/Panel2/InformacionPersonaje"]
 layout_mode = 0
 offset_left = 16.9998
 offset_top = 130.0
 offset_right = 133.0
 offset_bottom = 153.0
-text = "Extra:"
+text = "Extra: Ninguno"
 
 [node name="personaje2" type="Panel" parent="Panel2/Panel2"]
 layout_mode = 0

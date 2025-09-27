@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bhosswyman46i"]
+[gd_scene load_steps=22 format=3 uid="uid://bhosswyman46i"]
 
 [ext_resource type="Script" path="res://casa.gd" id="1_ki74d"]
 [ext_resource type="Texture2D" uid="uid://q7d0r4u6tdg6" path="res://Plataforma.png" id="2_62ual"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://3j78o1y027j5" path="res://fondo.png" id="8_v30mo"]
 [ext_resource type="PackedScene" uid="uid://d0ngiaofjn0vg" path="res://area_izquierda.tscn" id="9_ck4bf"]
 [ext_resource type="PackedScene" uid="uid://bhsyiqtjsfsmo" path="res://menuPersonajeEquipamiento.tscn" id="9_s07xx"]
+[ext_resource type="PackedScene" uid="uid://xbdosdbfgk8a" path="res://menuCocina.tscn" id="10_8lwmf"]
 [ext_resource type="PackedScene" uid="uid://dubw01dh2fpjv" path="res://area_derecha.tscn" id="10_e7dfr"]
 [ext_resource type="PackedScene" uid="uid://dq6as0aepc2ld" path="res://pantallita.tscn" id="11_sv74y"]
 [ext_resource type="PackedScene" uid="uid://dlcjeowox73ik" path="res://puerta_roja.tscn" id="14_5nrj1"]
@@ -31,6 +32,7 @@ menutienda = ExtResource("6_2iks2")
 menumejoras = ExtResource("7_77ej5")
 menuconstruccion = ExtResource("8_gekob")
 menupersonaje = ExtResource("9_s07xx")
+menucocina = ExtResource("10_8lwmf")
 metadata/_edit_vertical_guides_ = [-6000.0, 6000.0]
 metadata/_edit_horizontal_guides_ = [6048.0, -6008.0, 8.0]
 

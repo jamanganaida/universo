@@ -9,7 +9,11 @@ extends Panel
 @onready var armalarga_nombre = $Panel2/Panel2/armaLarga/VenderLiana22lr
 @onready var consumible_imagen = $Panel2/Panel2/consumible/img
 @onready var consumible_nombre = $Panel2/Panel2/consumible/consumible
-
+@onready var informacionPersonaje_daño = $Panel2/Panel2/InformacionPersonaje/daño
+@onready var informacionPersonaje_vida = $Panel2/Panel2/InformacionPersonaje/vida
+@onready var informacionPersonaje_velocidad_atq = $"Panel2/Panel2/InformacionPersonaje/vel-atq"
+@onready var informacionPersonaje_proteccion_atq = $Panel2/Panel2/InformacionPersonaje/proteccion_atq
+@onready var informacionPersonaje_extra = $Panel2/Panel2/InformacionPersonaje/extras
 var tipo = "todo"
 
 var id_objeto_focus = 0
@@ -17,6 +21,7 @@ var id_objeto_focus = 0
 func _ready():
 	Datos.objeto_equipado.connect(imprimir_segun_tipo)
 	Datos.objeto_equipado.connect(actualizar_equipo)
+	cargar_informacion()
 	actualizar_equipo()
 	imprimir_segun_tipo()
 
@@ -34,6 +39,7 @@ func actualizar_equipo():
 		elif data.tipo == "consumible":
 			consumible_imagen.texture = data.imagen
 			consumible_nombre.text = data.nombre
+	cargar_informacion()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func imprimir_segun_tipo():
@@ -46,11 +52,17 @@ func imprimir_segun_tipo():
 			imprimir_objeto(data)
 		if tipo == "arma-corta" and Datos.objetos[data].tipo == "arma-corta":
 			imprimir_objeto(data)
+		if tipo == "consumible":
+			imprimir_objeto(data)
 		if tipo == "todo":
 			imprimir_objeto(data)
+	listaObjetos.pagina = 0
+	listaObjetos.ordenar_hijos(0)
 
 
 func imprimir_objeto(data):
+	if Datos.objetos[data].cantidad == 0:
+		return
 	var slot = objetoContenedor.instantiate()# Asignar imagen
 	slot.get_node("Sprite2D").texture = Datos.objetos[data].imagen
 	slot.get_node("Label").text = "%s x%d" % [Datos.objetos[data].nombre, Datos.objetos[data].cantidad]# Tooltip (como el atributo title en HTML)
@@ -58,8 +70,6 @@ func imprimir_objeto(data):
 	slot.set_meta("item_id", Datos.objetos[data].id)
 	slot.set_meta("tipo", Datos.objetos[data].tipo)
 	listaObjetos.add_child(slot)
-	listaObjetos.pagina = 0
-	listaObjetos.ordenar_hijos(0)
 
 
 func _on_option_button_item_selected(index: int) -> void:
@@ -75,3 +85,10 @@ func _on_option_button_item_selected(index: int) -> void:
 	if index == 3:
 		tipo = "consumible"
 		imprimir_segun_tipo()
+
+func cargar_informacion():
+	informacionPersonaje_vida.text = "Vida: " + str(Datos.vidaMaxima)
+	informacionPersonaje_daño.text = "Daño: " + str(Datos.daño)
+	informacionPersonaje_proteccion_atq.text = "Proteccion ATQ: " + str(Datos.proteccionATQ)
+	informacionPersonaje_velocidad_atq.text = "Velocidad ATQ: " + str(Datos.velocidadDisparo)
+	informacionPersonaje_extra.text = "Extras: " + str(Datos.extrasInfo)

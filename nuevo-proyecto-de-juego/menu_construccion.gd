@@ -14,9 +14,10 @@ extends Panel
 var padre
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	calcularSiTodos()
 	Datos.plataforma_colocada.connect(colocando_plataforma)
 	padre = get_tree().current_scene
-	Datos.monedas_cambiadas.connect(calcularSiTodos)
+	Datos.plataforma_colocada.connect(calcularSiTodos)
 	pass # Replace with function body.
 
 
@@ -52,17 +53,17 @@ func _on_comprar_plataforma_común_pressed() -> void:
 
 
 func _on_comprar_plataforma_maiz_pressed() -> void:
-	colocarPlataformaCultivoDe("maiz", -500)
+	colocarPlataformaCultivoDe("maiz", -5000)
 	pass # Replace with function body.
 
 
 func _on_comprar_plataforma_pimiento_pressed() -> void:
-	colocarPlataformaCultivoDe("pimiento", -1000)
+	colocarPlataformaCultivoDe("pimiento", -15000)
 	pass # Replace with function body.
 
 
 func _on_comprar_plataforma_brocoli_pressed() -> void:
-	colocarPlataformaCultivoDe("brocoli", -5000)
+	colocarPlataformaCultivoDe("brocoli", -500)
 	pass # Replace with function body.
 
 
@@ -72,17 +73,17 @@ func _on_comprar_plataforma_cebolla_pressed() -> void:
 
 
 func _on_comprar_plataforma_zanahoria_pressed() -> void:
-	colocarPlataformaCultivoDe("zanahoria", -40000)
+	colocarPlataformaCultivoDe("zanahoria", -1000)
 	pass # Replace with function body.
 
 	
-func calcularSiTodos(_v):
+func calcularSiTodos():
 	calcularSi(boton1, 100)
-	calcularSi(boton2, 500)
-	calcularSi(boton3, 1000)
-	calcularSi(boton4, 5000)
+	calcularSi(boton2, 5000)
+	calcularSi(boton3, 15000)
+	calcularSi(boton4, 500)
 	calcularSi(boton5, 15000)
-	calcularSi(boton6, 40000)
+	calcularSi(boton6, 1000)
 	calcularSi(boton7, 50)
 
 func calcularSi(boton, cantidad):

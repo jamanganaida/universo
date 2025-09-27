@@ -1,9 +1,10 @@
+Sprite2D
+Label
 Button
+Panel
 CollisionShape2D
 Area2D
-Panel
 Node2D
-Label
 LineEdit
 OptionButton
 HFlowContainer

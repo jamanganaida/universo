@@ -11,6 +11,7 @@ extends Node2D
 @export var menumejoras:PackedScene
 @export var menuconstruccion:PackedScene
 @export var menupersonaje:PackedScene
+@export var menucocina:PackedScene
 @onready var ContenedorMenu = $CanvasLayer/ContenedorMenu
 @onready var catelindicacion = $ScartelIndicacion
 var pase = false

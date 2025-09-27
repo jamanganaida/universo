@@ -8,7 +8,7 @@ extends Panel
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	boton1.text = "Vida: " + str(Datos.vidaMaxima) + " +10 $" + str(Datos.costoMejoraVida)
-	boton2.text = "Daño: " + str(Datos.daño) + " +1 $" + str(Datos.costoMejoraDaño)
+	boton2.text = "Daño: " + str(Datos.daño_mejora) + " +1 $" + str(Datos.costoMejoraDaño)
 	boton3.text = "Plantalla curativa: " + str(Datos.vida_plataforma_curativa) + " +10 $" + str(Datos.costoMejoraPlataformaCurativa)
 	boton4.text = "Velocidad de diparo: " + str(Datos.velocidadDisparo) + " +1 $" + str(Datos.costoMejoraVelocidadDisparo)
 	pass # Replace with function body.
@@ -35,7 +35,7 @@ func _on_vida_plus_pressed() -> void:
 
 func _on_danger_más_pressed() -> void:
 	Datos.sumar_monedas(-Datos.costoMejoraDaño)
-	Datos.daño += 1
+	Datos.daño_mejora += 1
 	actualizar()
 	pass # Replace with function body.
 

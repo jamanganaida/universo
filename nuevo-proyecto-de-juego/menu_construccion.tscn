@@ -104,13 +104,13 @@ texture = ExtResource("2_osywq")
 [node name="comprarPlataformaPimiento" type="Button" parent="Panel2/Pimiento"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0395189
-anchor_top = 0.637931
-anchor_right = 0.252577
-anchor_bottom = 0.994253
+anchor_left = 0.0379309
+anchor_top = 0.635294
+anchor_right = 0.250989
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "$1,000"
+text = "$15.000"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Panel2/Pimiento"]
@@ -190,7 +190,7 @@ anchor_right = 0.252577
 anchor_bottom = 0.994253
 grow_horizontal = 2
 grow_vertical = 0
-text = "$5,000"
+text = "$500"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Panel2/Brocoli"]
@@ -230,7 +230,7 @@ anchor_right = 0.252577
 anchor_bottom = 0.994253
 grow_horizontal = 2
 grow_vertical = 0
-text = "$15,000"
+text = "$15.000"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Panel2/Cebolla"]
@@ -270,7 +270,7 @@ anchor_right = 0.252577
 anchor_bottom = 0.994253
 grow_horizontal = 2
 grow_vertical = 0
-text = "$40,000"
+text = "$5.000"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Panel2/Maiz"]
@@ -310,7 +310,7 @@ anchor_right = 0.252577
 anchor_bottom = 0.994253
 grow_horizontal = 2
 grow_vertical = 0
-text = "$500"
+text = "$1.000"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Panel2/Zanahoria"]

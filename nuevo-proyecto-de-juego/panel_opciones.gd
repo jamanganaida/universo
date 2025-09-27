@@ -60,5 +60,17 @@ func vacie_todo_menu():
 	Datos.menumejorasvisible = false
 	Datos.menuconstruccionvisible = false
 	Datos.menupersonajevisible = false
+	Datos.menucocina = false
 	for child in padre.ContenedorMenu.get_children():
 		child.queue_free()
+
+
+func _on_button_9_pressed() -> void:
+	if Datos.menucocina== true:
+		vacie_todo_menu()
+		Datos.menucocina = false
+	else:
+		vacie_todo_menu()
+		var menu = padre.menucocina.instantiate()
+		padre.ContenedorMenu.add_child(menu)
+		Datos.menucocina = true

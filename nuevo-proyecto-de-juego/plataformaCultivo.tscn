@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8x8qjjac2rwo"]
+[gd_scene load_steps=10 format=3 uid="uid://c8x8qjjac2rwo"]
 
 [ext_resource type="Script" path="res://plataformaCultivo.gd" id="1_5yb5h"]
 [ext_resource type="Texture2D" uid="uid://q7d0r4u6tdg6" path="res://Plataforma.png" id="2_4yplr"]
 [ext_resource type="PackedScene" uid="uid://b5hijcqinnw2o" path="res://monedas.tscn" id="2_nu7sv"]
 [ext_resource type="PackedScene" uid="uid://cg54xpjpxdop8" path="res://verdura.tscn" id="3_ucitw"]
-[ext_resource type="Texture2D" uid="uid://dlm7uphqdj1lv" path="res://planta_ojos.png" id="5_fxnxh"]
 [ext_resource type="Texture2D" uid="uid://56623b73yw4s" path="res://M_Minimapa.png" id="6_4ncym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prhsw"]
@@ -78,15 +77,8 @@ autostart = true
 position = Vector2(0, -26)
 shape = SubResource("CapsuleShape2D_1xsfy")
 
-[node name="PlantaOjos" type="Sprite2D" parent="Area2D"]
-position = Vector2(0, -22)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_fxnxh")
-
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-modulate = Color(1, 1, 1, 0.448555)
 position = Vector2(0, -51)
-scale = Vector2(2.57115, 2.57115)
 texture = ExtResource("6_4ncym")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
