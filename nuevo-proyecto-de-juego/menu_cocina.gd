@@ -11,11 +11,13 @@ extends Panel
 @onready var seleccionadoIngredientes = $Panel3/Ingredientes
 @onready var seleccionadoEfecto = $Panel3/Efecto
 @onready var seleccionadoImagen = $Panel/Imagen
-@onready var botonCrear = $Button
+@onready var botonCrear = $Panel3/Button
+@onready var seleccionadoCantidad = $Panel3/Cantidad
 
 var obj_seleccionado = "ninguno"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Datos.cultivo_cambiado.connect(imprimir_cantidad_verduras)
 	imprimir_cantidad_verduras()
 	pass # Replace with function body.
 
@@ -43,16 +45,23 @@ func imprimir_datos_consumible(nombre):
 		for ingr in Datos.objetos[nombre]["ingredientes"]:
 			seleccionadoIngredientes.text += Datos.objetos[nombre]["ingredientes"][ingr].nombre + ":" + str(Datos.objetos[nombre]["ingredientes"][ingr].cantidad)
 			seleccionadoIngredientes.text += ".  "
-
+		if Datos.objetos_equipados.has(nombre) and Datos.objetos_equipados[nombre].cantidad:
+			seleccionadoCantidad.text = "Tienes: " + str(Datos.objetos[nombre].cantidad + Datos.objetos_equipados[nombre].cantidad) +  "."
+		else: 
+			seleccionadoCantidad.text = "Tienes: " + str(Datos.objetos[nombre].cantidad) +  "."
+		seleccionadoEfecto.text = "Efecto: "
+		for attr in Datos.objetos[nombre]["atributos"]:
+			seleccionadoEfecto.text += attr + ": " + str(Datos.objetos[nombre]["atributos"][attr])
 func verificar_boton_disabled(nombre):
-	for ingr in Datos.objetos[nombre]["ingredientes"]:
-			var nombreVerdura = Datos.objetos[nombre]["ingredientes"][ingr].nombre
-			if Datos.objetos[nombre]["ingredientes"][ingr].cantidad > Datos.objetos[nombreVerdura].cantidad:
-				botonCrear.disabled = true
-				break
-				return
-			else:
-				botonCrear.disabled = false
+	if Datos.objetos.has(nombre):
+		for ingr in Datos.objetos[nombre]["ingredientes"]:
+				var nombreVerdura = Datos.objetos[nombre]["ingredientes"][ingr].nombre
+				if Datos.objetos[nombre]["ingredientes"][ingr].cantidad > Datos.objetos[nombreVerdura].cantidad:
+					botonCrear.disabled = true
+					break
+					return
+				else:
+					botonCrear.disabled = false
 				
 
 func _on_panel_3_gui_input(event: InputEvent) -> void:
@@ -93,3 +102,10 @@ func _on_button_pressed() -> void:
 				Datos.objetos[obj_seleccionado].cantidad += 1
 	imprimir_cantidad_verduras()
 	verificar_boton_disabled(obj_seleccionado)
+	imprimir_datos_consumible(obj_seleccionado)
+
+
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		Datos.menucocina = false
+		self.queue_free()

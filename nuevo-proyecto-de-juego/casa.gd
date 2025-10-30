@@ -24,6 +24,7 @@ func _ready() -> void:
 	personaje.connect("movimiento", agregar_personaje_al_minimapa)#
 	$personaje.global_position.x = 0
 	$personaje.global_position.y = 0
+	$personaje.atacar = false
 	Datos.actualizar_todos_los_datos()#imprime los datos del nivel
 	agregar_plataformas_al_minimapa()#
 

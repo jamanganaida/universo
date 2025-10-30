@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdhiqncku6l4e"]
+[gd_scene load_steps=15 format=3 uid="uid://cdhiqncku6l4e"]
 
 [ext_resource type="Script" path="res://personaje.gd" id="1_t20t0"]
 [ext_resource type="Texture2D" uid="uid://djtlmhbojp683" path="res://personaje.png" id="2_0o7am"]
 [ext_resource type="Texture2D" uid="uid://b13l638gy1xci" path="res://personaje_impulso.png" id="2_1dvjj"]
+[ext_resource type="Texture2D" uid="uid://bj5kgp82nw882" path="res://fondo2.png" id="4_wsdoc"]
+[ext_resource type="Texture2D" uid="uid://duulpcxs37gy1" path="res://arma_base.png" id="5_6bu02"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qg64v"]
 radius = 16.0
@@ -104,10 +106,72 @@ _data = {
 "volar": SubResource("Animation_gcl5v")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j3x4m"]
+radius = 101.124
+
+[sub_resource type="Animation" id="Animation_qx7nm"]
+resource_name = "golpe"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.396253, 0.923279, 1.56905, 1.94953]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-19, -57), Vector2(72, -41), Vector2(73, 3), Vector2(60, 30)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.3, 1.3), Vector2(1.5, 1.5), Vector2(1.5, 1.5), Vector2(1.3, 1.3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fnu54"]
+_data = {
+"golpe": SubResource("Animation_qx7nm")
+}
+
 [node name="personaje" type="CharacterBody2D"]
 z_index = 1
 collision_mask = 238
 script = ExtResource("1_t20t0")
+metadata/_edit_horizontal_guides_ = [8283.0, -8390.0, -10383.0, -12921.0]
+metadata/_edit_vertical_guides_ = [-8016.0, 8173.0]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qg64v")
@@ -124,7 +188,45 @@ libraries = {
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="Timer2" type="Timer" parent="."]
+one_shot = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.556, 0.556)
 
+[node name="Parallax2D" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax2D"]
+motion_scale = Vector2(0.9, 0.9)
+
+[node name="Fondo2" type="Sprite2D" parent="Parallax2D/ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("4_wsdoc")
+region_enabled = true
+region_rect = Rect2(-8000, -8000, 16000, 16000)
+region_filter_clip_enabled = true
+
+[node name="golpe" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 32
+
+[node name="colision" type="CollisionShape2D" parent="golpe"]
+position = Vector2(67, -48)
+shape = SubResource("CircleShape2D_j3x4m")
+
+[node name="Sprite2D" type="Sprite2D" parent="golpe"]
+visible = false
+position = Vector2(-19, -57)
+rotation = -0.396253
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("5_6bu02")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="golpe"]
+libraries = {
+"": SubResource("AnimationLibrary_fnu54")
+}
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="animation_finished" from="golpe/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

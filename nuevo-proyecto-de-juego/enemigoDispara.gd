@@ -2,6 +2,7 @@ extends Node2D
 
 @export var bullet_scene: PackedScene
 @export var fire_interval := 5.0  # cada 2 segundos dispara
+var vida_maxima = 100
 var vida = 100
 var daño = 1
 @export var target = Node
@@ -28,6 +29,8 @@ func disparar():
 
 
 func descontar_vida(dañoVar):
+	Datos.enemigo_combate = self
+	Datos.mandar_info_del_enemigo()
 	vida -= dañoVar
 	if vida <= 0:
 		emit_signal("enemigo_destruido")

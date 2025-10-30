@@ -13,17 +13,15 @@ func _ready() -> void:
 	boton4.text = "Velocidad de diparo: " + str(Datos.velocidadDisparo) + " +1 $" + str(Datos.costoMejoraVelocidadDisparo)
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func actualizar():
 	calcularSiTodos()
-	boton1.text = "Vida: " + str(Datos.vidaMaxima) + " +10 $" + str(Datos.costoMejoraVida)
-	boton2.text = "Daño: " + str(Datos.daño) + " +1 $" + str(Datos.costoMejoraDaño)
-	boton3.text = "Plantalla curativa: " + str(Datos.vida_plataforma_curativa) + " +10 $" + str(Datos.costoMejoraPlataformaCurativa)
-	boton4.text = "Velocidad de diparo: " + str(Datos.velocidadDisparo) + " +1 $" + str(Datos.costoMejoraVelocidadDisparo)
+	boton1.text = "Vida: " + str(Datos.vidaMaxima) + "+10 $" + str(Datos.costoMejoraVida)
+	boton2.text = "Daño: " + str(Datos.daño_mejora) + "+1 $" + str(Datos.costoMejoraDaño)
+	boton3.text = "Plantalla curativa: " + str(Datos.vida_plataforma_curativa) + "+10 $" + str(Datos.costoMejoraPlataformaCurativa)
+	if Datos.velocidadDisparo >= 45:
+		boton4.text = "Velocidad de ataque: " + str(Datos.velocidadDisparo) + "Nivel Maximo"
+	else:
+		boton4.text = "Velocidad de ataque: " + str(Datos.velocidadDisparo) + "+1 $" + str(Datos.costoMejoraVelocidadDisparo)
 	
 
 func _on_vida_plus_pressed() -> void:
@@ -48,10 +46,10 @@ func _on_pantalla_cura_pressed() -> void:
 
 
 func _on_velocidad_ataque_pressed() -> void:
-	Datos.sumar_monedas(-Datos.costoMejoraVelocidadDisparo)
-	Datos.velocidadDisparo += 1
-	actualizar()
-	pass # Replace with function body.
+	if Datos.velocidadDisparo < 45:
+		Datos.sumar_monedas(-Datos.costoMejoraVelocidadDisparo)
+		Datos.velocidadDisparo += 1
+		actualizar()
 
 func calcularSi(boton, cantidad):
 	if Datos.monedas < cantidad:
@@ -63,10 +61,14 @@ func calcularSiTodos():
 	calcularSi(boton1, 100)
 	calcularSi(boton2, 100)
 	calcularSi(boton3, 100)
-	calcularSi(boton4, 100)
+	if Datos.velocidadDisparo < 45:
+		calcularSi(boton4, 100)
+	else:
+		boton4.disabled = true
+		
 
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		Datos.menumejorasvisible = false
 		self.queue_free()

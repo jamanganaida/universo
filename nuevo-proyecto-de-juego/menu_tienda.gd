@@ -34,25 +34,20 @@ func _ready() -> void:
 	calcularDisabledDeLosBotones()
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func calcularDisabledDeLosBotones():
-	if Datos.monedas < 2500:
+	if Datos.monedas < 250:
 		comprarBrocoli.disabled = true
 	else:
 		comprarBrocoli.disabled = false
-	if Datos.monedas < 7500:
+	if Datos.monedas < 20000:
 		comprarCebolla.disabled = true
 	else:
 		comprarCebolla.disabled = false
-	if Datos.monedas < 250:
+	if Datos.monedas < 2500:
 		comprarMaiz.disabled = true
 	else:
 		comprarMaiz.disabled = false
-	if Datos.monedas < 500:
+	if Datos.monedas < 7500:
 		comprarPimiento.disabled = true
 	else:
 		comprarPimiento.disabled = false
@@ -60,7 +55,7 @@ func calcularDisabledDeLosBotones():
 		comprarTomate.disabled = true
 	else:
 		comprarTomate.disabled = false
-	if Datos.monedas < 20000:
+	if Datos.monedas < 500:
 		comprarZanahoria.disabled = true
 	else:
 		comprarZanahoria.disabled = false
@@ -186,7 +181,7 @@ func _on_vender_pimiento_pressed() -> void:
 	calcularDisabledDeLosBotones()
 
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		Datos.menutiendavisible = false
 		self.queue_free()
@@ -307,8 +302,8 @@ func controlar_botones_tienda_arma():
 func _on_comprar_escoba_pressed() -> void:
 	if Datos.monedas >= 1000:
 		Datos.sumar_monedas(-1000)
-		var atributo = {"daño": 1}
-		Datos.crear_guardar_objeto("Escoba", "Escoba +1 daño", 1, preload("res://arma-0-escoba.png") as CompressedTexture2D, "arma-corta", atributo, "ninguna")
+		var atributo = {"daño": 10}
+		Datos.crear_guardar_objeto("Escoba", "Escoba +10 daño", 1, preload("res://arma-0-escoba.png") as CompressedTexture2D, "arma-corta", atributo, "ninguna")
 	controlar_botones_tienda_arma()
 		
 
@@ -316,16 +311,16 @@ func _on_comprar_escoba_pressed() -> void:
 func _on_comprar_bate_pressed() -> void:
 	if Datos.monedas >= 2000:
 		Datos.sumar_monedas(-2000)
-		var atributo = {"daño": 2}
-		Datos.crear_guardar_objeto("Bate", "Bate +2 daño", 1, preload("res://arma-1-bate.png") as CompressedTexture2D, "arma-corta", atributo, "ninguna" )
+		var atributo = {"daño": 20}
+		Datos.crear_guardar_objeto("Bate", "Bate +20 daño", 1, preload("res://arma-1-bate.png") as CompressedTexture2D, "arma-corta", atributo, "ninguna" )
 	controlar_botones_tienda_arma()
 
 
 func _on_comprar_remo_pressed() -> void:
 	if Datos.monedas >= 3000:
 		Datos.sumar_monedas(-3000)
-		var atributo = {"daño": 3}
-		Datos.crear_guardar_objeto("Remo", "Remo +3 daño", 1, preload("res://arma-2-remo.png") as CompressedTexture2D, "arma-corta", atributo, "ninguna")
+		var atributo = {"daño": 30}
+		Datos.crear_guardar_objeto("Remo", "Remo +30 daño", 1, preload("res://arma-2-remo.png") as CompressedTexture2D, "arma-corta", atributo, "ninguna")
 	controlar_botones_tienda_arma()
 
 
@@ -333,8 +328,8 @@ func _on_comprar_remo_pressed() -> void:
 func _on_comprar_horquilla_pressed() -> void:
 	if Datos.monedas >= 4000:
 		Datos.sumar_monedas(-4000)
-		var atributo = {"daño": 4}
-		Datos.crear_guardar_objeto("Horquilla", "Horquilla +4 daño", 1, preload("res://arma-4-horquilla.png") as CompressedTexture2D, "arma-corta", atributo, "ninguna")
+		var atributo = {"daño": 40}
+		Datos.crear_guardar_objeto("Horquilla", "Horquilla +40 daño", 1, preload("res://arma-4-horquilla.png") as CompressedTexture2D, "arma-corta", atributo, "ninguna")
 	controlar_botones_tienda_arma()
 
 
@@ -342,62 +337,62 @@ func _on_comprar_horquilla_pressed() -> void:
 func _on_comprar_pala_pressed() -> void:
 	if Datos.monedas >= 5000:
 		Datos.sumar_monedas(-5000)
-		var atributo = {"daño": 5}
-		Datos.crear_guardar_objeto("Pala", "Pala +5 daño", 1, preload("res://arma-5-pala.png") as CompressedTexture2D, "arma-corta", atributo, "ninguna")
+		var atributo = {"daño": 50}
+		Datos.crear_guardar_objeto("Pala", "Pala +50 daño", 1, preload("res://arma-5-pala.png") as CompressedTexture2D, "arma-corta", atributo, "ninguna")
 	controlar_botones_tienda_arma()
 
 
 func _on_comprar_acha_pressed() -> void:
 	if Datos.monedas >= 8000:
 		Datos.sumar_monedas(-8000)
-		var atributo = {"daño": 10}
-		Datos.crear_guardar_objeto("Acha", "Acha +10 daño", 1, preload("res://arma-6-acha.png") as CompressedTexture2D, "arma-corta", atributo, "ninguna")
+		var atributo = {"daño": 100}
+		Datos.crear_guardar_objeto("Acha", "Acha +100 daño", 1, preload("res://arma-6-acha.png") as CompressedTexture2D, "arma-corta", atributo, "ninguna")
 	controlar_botones_tienda_arma()
 
 
 func _on_vender_liana_22_lr_pressed() -> void:
 	if Datos.monedas >= 15000:
 		Datos.sumar_monedas(-15000)
-		var atributo = {"daño": 15}
-		Datos.crear_guardar_objeto("Liana", "Liana +15 daño", 1, preload("res://arma-fuego-1-Liana22lr.png") as CompressedTexture2D, "arma-larga", atributo, "ninguna")
+		var atributo = {"daño": 150}
+		Datos.crear_guardar_objeto("Liana", "Liana +150 daño", 1, preload("res://arma-fuego-1-Liana22lr.png") as CompressedTexture2D, "arma-larga", atributo, "ninguna")
 	controlar_botones_tienda_arma()
 
 
 func _on_vender_doca_9_mm_pressed() -> void:
 	if Datos.monedas >= 23000:
 		Datos.sumar_monedas(-23000)
-		var atributo = {"daño": 23}
-		Datos.crear_guardar_objeto("Doca", "Doca +23 daño", 1, preload("res://arma-fuego-2-Doca9mm.png") as CompressedTexture2D, "arma-larga", atributo, "ninguna")
+		var atributo = {"daño": 230}
+		Datos.crear_guardar_objeto("Doca", "Doca +230 daño", 1, preload("res://arma-fuego-2-Doca9mm.png") as CompressedTexture2D, "arma-larga", atributo, "ninguna")
 	controlar_botones_tienda_arma()
 
 
 func _on_vender_boom_9_mm_pressed() -> void:
 	if Datos.monedas >= 38500:
 		Datos.sumar_monedas(-38500)
-		var atributo = {"daño": 39}
-		Datos.crear_guardar_objeto("Boom", "Boom +39 daño", 1, preload("res://arma-fuego-3-Boom9mm.png") as CompressedTexture2D, "arma-larga", atributo, "ninguna" )
+		var atributo = {"daño": 390}
+		Datos.crear_guardar_objeto("Boom", "Boom +390 daño", 1, preload("res://arma-fuego-3-Boom9mm.png") as CompressedTexture2D, "arma-larga", atributo, "ninguna" )
 	controlar_botones_tienda_arma()
 
 
 func _on_vender_aloe_9_mm_pressed() -> void:
 	if Datos.monedas >= 40000:
 		Datos.sumar_monedas(-40000)
-		var atributo = {"daño": 40}
-		Datos.crear_guardar_objeto("Aloe", "Aloe +40 daño", 1, preload("res://arma-fuego-4-Aloe9mm.png") as CompressedTexture2D, "arma-larga", atributo, "ninguna")
+		var atributo = {"daño": 400}
+		Datos.crear_guardar_objeto("Aloe", "Aloe +400 daño", 1, preload("res://arma-fuego-4-Aloe9mm.png") as CompressedTexture2D, "arma-larga", atributo, "ninguna")
 	controlar_botones_tienda_arma()
 
 
 func _on_vender_engau_9_mm_pressed() -> void:
 	if Datos.monedas >= 87000:
 		Datos.sumar_monedas(-87000)
-		var atributo = {"daño": 87}
-		Datos.crear_guardar_objeto("Engau", "Engau +87 daño", 1, preload("res://arma-fuego-5-Engau9mm.png") as CompressedTexture2D, "arma-larga", atributo, "ninguna")
+		var atributo = {"daño": 870}
+		Datos.crear_guardar_objeto("Engau", "Engau +870 daño", 1, preload("res://arma-fuego-5-Engau9mm.png") as CompressedTexture2D, "arma-larga", atributo, "ninguna")
 	controlar_botones_tienda_arma()
 
 
 func _on_vender_pluto_10_mm_pressed() -> void:
 	if Datos.monedas >= 126900:
 		Datos.sumar_monedas(-126900)
-		var atributo = {"daño": 130}
-		Datos.crear_guardar_objeto("Pluto", "Boom +130 daño", 1, preload("res://arma-fuego-6-Pluto10mm.png") as CompressedTexture2D, "arma-larga", atributo, "ninguna")
+		var atributo = {"daño": 1300}
+		Datos.crear_guardar_objeto("Pluto", "Boom +1300 daño", 1, preload("res://arma-fuego-6-Pluto10mm.png") as CompressedTexture2D, "arma-larga", atributo, "ninguna")
 	controlar_botones_tienda_arma()

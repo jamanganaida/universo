@@ -103,92 +103,11 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "$50 x 1"
 
-[node name="Panel2" type="Panel" parent="PanelCultivos"]
+[node name="Panel5" type="Panel" parent="PanelCultivos"]
 layout_mode = 0
 offset_left = 123.0
 offset_top = 30.0
 offset_right = 203.0
-offset_bottom = 110.0
-tooltip_text = "Zanahoria"
-
-[node name="Tomate2" type="Sprite2D" parent="PanelCultivos/Panel2"]
-position = Vector2(40, 40)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("5_mijr4")
-
-[node name="ComprarZanahoria" type="Button" parent="PanelCultivos/Panel2"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -30.0
-offset_right = 32.0
-offset_bottom = 31.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "$20,000 x 1"
-
-[node name="Panel3" type="Panel" parent="PanelCultivos"]
-layout_mode = 0
-offset_left = 233.0
-offset_top = 30.0
-offset_right = 313.0
-offset_bottom = 110.0
-tooltip_text = "Maiz"
-
-[node name="Tomate3" type="Sprite2D" parent="PanelCultivos/Panel3"]
-position = Vector2(40, 40)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("6_0mxn8")
-
-[node name="ComprarMaiz" type="Button" parent="PanelCultivos/Panel3"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -30.0
-offset_right = 32.0
-offset_bottom = 31.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "$250 x 1"
-
-[node name="Panel4" type="Panel" parent="PanelCultivos"]
-layout_mode = 0
-offset_left = 343.0
-offset_top = 30.0
-offset_right = 423.0
-offset_bottom = 110.0
-tooltip_text = "Cebolla"
-
-[node name="Tomate4" type="Sprite2D" parent="PanelCultivos/Panel4"]
-position = Vector2(39, 40)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("7_bb8ch")
-
-[node name="ComprarCebolla" type="Button" parent="PanelCultivos/Panel4"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -30.0
-offset_right = 32.0
-offset_bottom = 31.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "$7,500 x 1"
-
-[node name="Panel5" type="Panel" parent="PanelCultivos"]
-layout_mode = 0
-offset_left = 453.0
-offset_top = 30.0
-offset_right = 533.0
 offset_bottom = 110.0
 tooltip_text = "Brocoli"
 
@@ -209,13 +128,67 @@ offset_right = 32.0
 offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 0
+text = "$250 x 1"
+
+[node name="Panel2" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 30.0
+offset_right = 313.0
+offset_bottom = 110.0
+tooltip_text = "Zanahoria"
+
+[node name="Tomate2" type="Sprite2D" parent="PanelCultivos/Panel2"]
+position = Vector2(40, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_mijr4")
+
+[node name="ComprarZanahoria" type="Button" parent="PanelCultivos/Panel2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$500 x 1"
+
+[node name="Panel3" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 30.0
+offset_right = 423.0
+offset_bottom = 110.0
+tooltip_text = "Maiz"
+
+[node name="Tomate3" type="Sprite2D" parent="PanelCultivos/Panel3"]
+position = Vector2(40, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_0mxn8")
+
+[node name="ComprarMaiz" type="Button" parent="PanelCultivos/Panel3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
 text = "$2,500 x 1"
 
 [node name="Panel6" type="Panel" parent="PanelCultivos"]
 layout_mode = 0
-offset_left = 563.0
+offset_left = 453.0
 offset_top = 30.0
-offset_right = 643.0
+offset_right = 533.0
 offset_bottom = 110.0
 tooltip_text = "Pimiento"
 
@@ -236,7 +209,34 @@ offset_right = 32.0
 offset_bottom = 31.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "$500 x 1"
+text = "$7,500 x 1"
+
+[node name="Panel4" type="Panel" parent="PanelCultivos"]
+layout_mode = 0
+offset_left = 563.0
+offset_top = 30.0
+offset_right = 643.0
+offset_bottom = 110.0
+tooltip_text = "Cebolla"
+
+[node name="Tomate4" type="Sprite2D" parent="PanelCultivos/Panel4"]
+position = Vector2(39, 40)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_bb8ch")
+
+[node name="ComprarCebolla" type="Button" parent="PanelCultivos/Panel4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_right = 32.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "$20,000 x 1"
 
 [node name="Panel7" type="Panel" parent="PanelCultivos"]
 layout_mode = 0
@@ -266,9 +266,9 @@ text = "$10 x 1"
 
 [node name="Panel8" type="Panel" parent="PanelCultivos"]
 layout_mode = 0
-offset_left = 123.0
+offset_left = 233.0
 offset_top = 180.0
-offset_right = 203.0
+offset_right = 313.0
 offset_bottom = 260.0
 
 [node name="Tomate2" type="Sprite2D" parent="PanelCultivos/Panel8"]
@@ -292,9 +292,9 @@ text = "$10 x 1"
 
 [node name="Panel9" type="Panel" parent="PanelCultivos"]
 layout_mode = 0
-offset_left = 233.0
+offset_left = 343.0
 offset_top = 180.0
-offset_right = 313.0
+offset_right = 423.0
 offset_bottom = 260.0
 
 [node name="Tomate3" type="Sprite2D" parent="PanelCultivos/Panel9"]
@@ -318,9 +318,9 @@ text = "$10 x 1"
 
 [node name="Panel10" type="Panel" parent="PanelCultivos"]
 layout_mode = 0
-offset_left = 343.0
+offset_left = 563.0
 offset_top = 180.0
-offset_right = 423.0
+offset_right = 643.0
 offset_bottom = 260.0
 
 [node name="Tomate4" type="Sprite2D" parent="PanelCultivos/Panel10"]
@@ -344,9 +344,9 @@ text = "$10 x 1"
 
 [node name="Panel11" type="Panel" parent="PanelCultivos"]
 layout_mode = 0
-offset_left = 453.0
+offset_left = 123.0
 offset_top = 180.0
-offset_right = 533.0
+offset_right = 203.0
 offset_bottom = 260.0
 
 [node name="Tomate5" type="Sprite2D" parent="PanelCultivos/Panel11"]
@@ -370,9 +370,9 @@ text = "$10 x 1"
 
 [node name="Panel12" type="Panel" parent="PanelCultivos"]
 layout_mode = 0
-offset_left = 563.0
+offset_left = 453.0
 offset_top = 180.0
-offset_right = 643.0
+offset_right = 533.0
 offset_bottom = 260.0
 
 [node name="Tomate6" type="Sprite2D" parent="PanelCultivos/Panel12"]
@@ -836,18 +836,17 @@ text = ">"
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(350.5, 172.5)
 shape = SubResource("RectangleShape2D_lsjcp")
 
 [connection signal="pressed" from="PanelCultivos/Panel/ComprarTomate" to="." method="_on_comprar_tomate_pressed"]
+[connection signal="pressed" from="PanelCultivos/Panel5/ComprarBrocoli" to="." method="_on_comprar_brocoli_pressed"]
 [connection signal="pressed" from="PanelCultivos/Panel2/ComprarZanahoria" to="." method="_on_comprar_zanahoria_pressed"]
 [connection signal="pressed" from="PanelCultivos/Panel3/ComprarMaiz" to="." method="_on_comprar_maiz_pressed"]
-[connection signal="pressed" from="PanelCultivos/Panel4/ComprarCebolla" to="." method="_on_comprar_cebolla_pressed"]
-[connection signal="pressed" from="PanelCultivos/Panel5/ComprarBrocoli" to="." method="_on_comprar_brocoli_pressed"]
 [connection signal="pressed" from="PanelCultivos/Panel6/ComprarPimiento" to="." method="_on_comprar_pimiento_pressed"]
+[connection signal="pressed" from="PanelCultivos/Panel4/ComprarCebolla" to="." method="_on_comprar_cebolla_pressed"]
 [connection signal="pressed" from="PanelCultivos/Panel7/VenderTomate" to="." method="_on_vender_tomate_pressed"]
 [connection signal="pressed" from="PanelCultivos/Panel8/VenderZanahoria" to="." method="_on_vender_zanahoria_pressed"]
 [connection signal="pressed" from="PanelCultivos/Panel9/VenderMaiz" to="." method="_on_vender_maiz_pressed"]

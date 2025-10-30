@@ -1,0 +1,7 @@
+# Ignorar cualquier archivo o carpeta que termine en .import
+*.import
+
+# Ignorar cualquier archivo o carpeta que termine en .tmp
+*.tmp
+
+.xfs/

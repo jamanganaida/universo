@@ -24,6 +24,8 @@ var nivel = 1
 
 func _ready() -> void:#
 	Datos.contenedor.set_visible(false)
+	Datos.contenedor.set_deferred("disabled", true)
+	Datos.actualizar_stats_con_lo_equipado()
 	var lista = {}
 	nivel = Datos.nivel
 	var cantidad_monedas = randi_range(20, 50)
@@ -126,6 +128,7 @@ func _instanciar_objeto(tipo:String, posicion:Vector2):
 		objeto.global_position = posicion
 		objeto.daño += roundi((2*nivel) * 0.3)
 		objeto.vida += 10*nivel
+		objeto.vida_maxima += 10*nivel
 		contenedor_enemigos.add_child(objeto)
 	if tipo == "puertaVerde":
 		var objeto = puertaVerde.instantiate()

@@ -1,10 +1,6 @@
-res://nivel1.tscn
+res://menu_información.tscn
 res://enemigoDispara.gd
-res://menu_cocina.gd
-res://niveles.tscn
-res://panel_opciones.tscn
-res://menuCocina.tscn
-res://interfaz_casa.tscn
-res://menu_tienda.tscn
 res://menu_tienda.gd
+res://menu_tienda.tscn
+res://menu_inicio.tscn
 res://datos.gd

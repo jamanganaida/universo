@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b2d3omfdbndsy"]
+[gd_scene load_steps=21 format=3 uid="uid://b2d3omfdbndsy"]
 
 [ext_resource type="Script" path="res://Niveles_bases.gd" id="1_7wxkw"]
 [ext_resource type="Texture2D" uid="uid://b2ipj4smjimsf" path="res://Plataforma_Minimapa.png" id="2_v1gw4"]
@@ -14,11 +14,17 @@
 [ext_resource type="PackedScene" uid="uid://cdhiqncku6l4e" path="res://personaje.tscn" id="11_wgble"]
 [ext_resource type="PackedScene" uid="uid://bug4fh3ypl043" path="res://area_de_colision_baja.tscn" id="12_actxj"]
 [ext_resource type="PackedScene" uid="uid://c5jlv66026do8" path="res://interfaz_juego.tscn" id="14_uc2ht"]
-[ext_resource type="Texture2D" uid="uid://3j78o1y027j5" path="res://fondo.png" id="15_dlfly"]
 [ext_resource type="PackedScene" uid="uid://d0ngiaofjn0vg" path="res://area_izquierda.tscn" id="16_1po2b"]
 [ext_resource type="PackedScene" uid="uid://dubw01dh2fpjv" path="res://area_derecha.tscn" id="17_cvo27"]
 [ext_resource type="PackedScene" uid="uid://dq6as0aepc2ld" path="res://pantallita.tscn" id="18_3gdtq"]
 [ext_resource type="PackedScene" uid="uid://boc3ejmr5ktcx" path="res://area_de_colision_alta.tscn" id="19_mehiu"]
+
+[sub_resource type="Gradient" id="Gradient_i31o0"]
+offsets = PackedFloat32Array(0, 0.621951, 0.926829)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7udkh"]
+gradient = SubResource("Gradient_i31o0")
 
 [node name="Niveles" type="Node2D"]
 script = ExtResource("1_7wxkw")
@@ -33,7 +39,7 @@ plataforma = ExtResource("9_dcgiw")
 puertaVerde = ExtResource("10_fkstq")
 cofre = ExtResource("11_jjvn0")
 metadata/_edit_vertical_guides_ = [-6000.0, 6000.0]
-metadata/_edit_horizontal_guides_ = [6048.0, -6008.0, 8.0]
+metadata/_edit_horizontal_guides_ = [6048.0, -6026.0, 8.0]
 
 [node name="personaje" parent="." instance=ExtResource("11_wgble")]
 position = Vector2(0, -5900)
@@ -49,12 +55,6 @@ position = Vector2(0, 6100)
 
 [node name="Contenedor_enemigos" type="Node2D" parent="."]
 
-[node name="Fondo" type="Sprite2D" parent="."]
-modulate = Color(0.40625, 0.355469, 0.355469, 1)
-z_index = -10
-scale = Vector2(7, 7)
-texture = ExtResource("15_dlfly")
-
 [node name="AreaIzquierda" parent="." instance=ExtResource("16_1po2b")]
 position = Vector2(-6000, 0)
 
@@ -65,3 +65,18 @@ position = Vector2(6000, 0)
 
 [node name="AreaDeColisionAlta" parent="." instance=ExtResource("19_mehiu")]
 position = Vector2(0, -6000)
+
+[node name="ColorRect" type="TextureRect" parent="."]
+offset_left = 3236.0
+offset_top = -8000.0
+offset_right = 8000.0
+offset_bottom = 7990.0
+texture = SubResource("GradientTexture1D_7udkh")
+
+[node name="ColorRect2" type="TextureRect" parent="."]
+offset_left = -8038.0
+offset_top = -8000.0
+offset_right = -3274.0
+offset_bottom = 7990.0
+texture = SubResource("GradientTexture1D_7udkh")
+flip_h = true

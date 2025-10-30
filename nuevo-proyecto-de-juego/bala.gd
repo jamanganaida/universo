@@ -1,7 +1,6 @@
 extends Area2D
 
 @export var speed = 3000
-var daño = 20
 var direction = Vector2.ZERO
 
 func _ready():
@@ -16,5 +15,5 @@ func _physics_process(delta):
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemigo"):
-		area.descontar_vida(daño)
+		area.descontar_vida(Datos.daño + Datos.daño_mejora)
 		queue_free()

@@ -1,6 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5jlv66026do8"]
+[gd_scene load_steps=11 format=3 uid="uid://c5jlv66026do8"]
 
 [ext_resource type="Script" path="res://canvas_layer.gd" id="1_m7xg4"]
+[ext_resource type="Texture2D" uid="uid://cbo7navevhrxd" path="res://combate.png" id="2_f42fx"]
+[ext_resource type="Texture2D" uid="uid://cupd33jq0ua3a" path="res://sopa_ 1_jugo_tomate.png" id="3_kq6f3"]
+[ext_resource type="Texture2D" uid="uid://d2ngbapm52hym" path="res://1.png" id="4_ggppp"]
+[ext_resource type="Texture2D" uid="uid://c11gd4mnltmqr" path="res://2.png" id="5_sh74j"]
+[ext_resource type="Texture2D" uid="uid://cbdjhv3qbfpjb" path="res://3.png" id="6_1p05n"]
+[ext_resource type="Texture2D" uid="uid://cd0aoa4bkcqmw" path="res://4.png" id="7_bvjle"]
+[ext_resource type="Texture2D" uid="uid://co1ivimrcrcde" path="res://5.png" id="8_wcd3t"]
+[ext_resource type="Texture2D" uid="uid://b8aip0lahvfh5" path="res://6.png" id="9_fwmo2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dt3hm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ggppp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sh74j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1p05n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bvjle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wcd3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fwmo2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_m7xg4")
@@ -14,9 +48,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
-layout_mode = 0
-offset_right = 100.0
-offset_bottom = 30.0
+layout_mode = 2
+anchor_right = 0.0868056
+anchor_bottom = 0.0462963
+metadata/_edit_use_anchors_ = true
 
 [node name="Vida" type="Label" parent="Control/PanelContainer"]
 layout_mode = 2
@@ -29,6 +64,30 @@ z_index = -1
 layout_mode = 2
 size_flags_vertical = 1
 show_percentage = false
+
+[node name="PanelContainer5" type="PanelContainer" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 210.0
+offset_right = 310.0
+offset_bottom = 30.0
+
+[node name="Vida" type="Label" parent="Control/PanelContainer5"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Vida: 0"
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/PanelContainer5"]
+modulate = Color(0.520833, 0, 0, 1)
+z_index = -1
+layout_mode = 2
+size_flags_vertical = 1
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/PanelContainer5"]
+position = Vector2(-62, 14)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_f42fx")
 
 [node name="PanelContainer2" type="PanelContainer" parent="Control"]
 layout_mode = 1
@@ -76,3 +135,25 @@ grow_horizontal = 2
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Monedas: 0"
+
+[node name="PanelContainer6" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.17284
+anchor_right = 0.0295139
+anchor_bottom = 0.225309
+offset_bottom = -1.52588e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Sopa1JugoTomate" type="Sprite2D" parent="Control/PanelContainer6"]
+position = Vector2(17, 16.9997)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_kq6f3")
+
+[node name="ColorRect" type="AnimatedSprite2D" parent="Control/PanelContainer6"]
+visible = false
+position = Vector2(17, 16.9997)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_dt3hm")
+frame = 3
+frame_progress = 0.332509

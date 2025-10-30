@@ -8,10 +8,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
+
 func ordenar_hijos(pagina := 0):
 	await get_tree().create_timer(0.01).timeout
 	var paginas_total = contador_Objetos() / 12
@@ -26,9 +23,9 @@ func ordenar_hijos(pagina := 0):
 		if idx < inicio or idx >= fin:
 			c.visible = false
 			continue
-		var local := idx - inicio
-		var col := local % 3
-		var fila := local / 3
+		var local = idx - inicio
+		var col = local % 3
+		var fila = int(local / 3)
 		c.position = Vector2(col * 100, fila * 115)
 		c.visible = true
 		c.position.x += 30
@@ -40,7 +37,7 @@ func contador_Objetos():
 	return contador
 	
 func _on_button_pressed() -> void:
-	var paginas_total = contador_Objetos() / 12
+	var paginas_total = int(contador_Objetos() / 12)
 	if paginas_total > pagina:
 		pagina += 1
 	elif paginas_total <= pagina:
@@ -49,7 +46,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
-	var paginas_total = contador_Objetos() / 12
+	var paginas_total = int(contador_Objetos() / 12)
 	if pagina > 0:
 		pagina -= 1
 	elif pagina <= 0:

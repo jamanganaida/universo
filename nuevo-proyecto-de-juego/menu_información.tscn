@@ -1,0 +1,261 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpwroyvbadk1d"]
+
+[ext_resource type="Texture2D" uid="uid://bj5kgp82nw882" path="res://fondo2.png" id="1_jbsig"]
+[ext_resource type="Script" path="res://menu_inicio.gd" id="1_k48uj"]
+[ext_resource type="Texture2D" uid="uid://dlb5bgllsjakb" path="res://mouse.png" id="2_eaqxf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3risa"]
+bg_color = Color(0.0521918, 0.135417, 0.0651957, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf8rq"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwhr8"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0751953, 0.34375, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k48uj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jbsig")
+
+[node name="PanelContainer" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -543.0
+offset_top = -304.0
+offset_right = 537.0
+offset_bottom = 298.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3risa")
+
+[node name="Titulo" type="Label" parent="PanelContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.0
+offset_top = 19.0
+offset_right = 162.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.692708, 0.692708, 0.692708, 1)
+theme_override_font_sizes/font_size = 50
+text = "¿Cómo Jugar?"
+
+[node name="Container" type="Control" parent="PanelContainer"]
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 93.0
+offset_right = 343.0
+offset_bottom = 589.0
+
+[node name="Subtitulo" type="Label" parent="PanelContainer/Container"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 7.0
+offset_right = 253.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.692708, 0.692708, 0.692708, 1)
+theme_override_font_sizes/font_size = 25
+text = "Controles:"
+clip_text = true
+
+[node name="Descripcion" type="Label" parent="PanelContainer/Container"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 222.0
+offset_right = 311.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(0.692708, 0.692708, 0.692708, 1)
+theme_override_font_sizes/font_size = 25
+text = "W: Arriba.
+S: Abajo.
+A: Izquierda.
+D: Derecha.
+C: Consumir
+Espacio: Ataque corto.
+Ratón: Ataque largo."
+clip_text = true
+
+[node name="w" type="Label" parent="PanelContainer/Container"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 62.0
+offset_right = 73.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0.647059, 0.647059, 0.65098, 1)
+theme_override_colors/font_shadow_color = Color(0.0941176, 0.105882, 0.12549, 1)
+theme_override_colors/font_outline_color = Color(0.321569, 0.333333, 0.34902, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_bf8rq")
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="s" type="Label" parent="PanelContainer/Container"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 102.0
+offset_right = 80.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0.647059, 0.647059, 0.65098, 1)
+theme_override_colors/font_shadow_color = Color(0.0941176, 0.105882, 0.12549, 1)
+theme_override_colors/font_outline_color = Color(0.321569, 0.333333, 0.34902, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_bf8rq")
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="a" type="Label" parent="PanelContainer/Container"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 102.0
+offset_right = 48.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0.647059, 0.647059, 0.65098, 1)
+theme_override_colors/font_shadow_color = Color(0.0941176, 0.105882, 0.12549, 1)
+theme_override_colors/font_outline_color = Color(0.321569, 0.333333, 0.34902, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_bf8rq")
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="d" type="Label" parent="PanelContainer/Container"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 102.0
+offset_right = 112.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0.647059, 0.647059, 0.65098, 1)
+theme_override_colors/font_shadow_color = Color(0.0941176, 0.105882, 0.12549, 1)
+theme_override_colors/font_outline_color = Color(0.321569, 0.333333, 0.34902, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_bf8rq")
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="c" type="Label" parent="PanelContainer/Container"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 142.0
+offset_right = 128.0
+offset_bottom = 179.0
+theme_override_colors/font_color = Color(0.647059, 0.647059, 0.65098, 1)
+theme_override_colors/font_shadow_color = Color(0.0941176, 0.105882, 0.12549, 1)
+theme_override_colors/font_outline_color = Color(0.321569, 0.333333, 0.34902, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_bf8rq")
+text = "C"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="espacio" type="Label" parent="PanelContainer/Container"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 182.0
+offset_right = 204.0
+offset_bottom = 219.0
+theme_override_colors/font_color = Color(0.647059, 0.647059, 0.65098, 1)
+theme_override_colors/font_shadow_color = Color(0.0941176, 0.105882, 0.12549, 1)
+theme_override_colors/font_outline_color = Color(0.321569, 0.333333, 0.34902, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_bf8rq")
+text = "Espacio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ratón" type="Panel" parent="PanelContainer/Container"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 86.0
+offset_right = 303.0
+offset_bottom = 182.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bf8rq")
+
+[node name="mouse" type="Sprite2D" parent="PanelContainer/Container/ratón"]
+position = Vector2(34, 49.25)
+scale = Vector2(1.04545, 1.02033)
+texture = ExtResource("2_eaqxf")
+
+[node name="Control" type="Control" parent="PanelContainer"]
+anchors_preset = 0
+offset_left = 403.0
+offset_top = 93.0
+offset_right = 1057.0
+offset_bottom = 412.0
+
+[node name="subtitulo2" type="Label" parent="PanelContainer/Control"]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 7.0
+offset_right = 368.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.692708, 0.692708, 0.692708, 1)
+theme_override_font_sizes/font_size = 25
+text = "Objetivo:"
+clip_text = true
+
+[node name="Descripcion2" type="Label" parent="PanelContainer/Control"]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 48.0
+offset_right = 654.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(0.692708, 0.692708, 0.692708, 1)
+theme_override_font_sizes/font_size = 26
+text = "Eres Leo, un aventurero en un mundo alienígena.
+Tu misión es derrotar a los enemigos, reunir monedas y mejorar tus estadísticas y objetos para avanzar cada vez más lejos.
+En tu espacio personal podrás cultivar y construir plataformas; usa tus cosechas para venderlas o crear consumibles que te ayuden en combate.
+Supera oleadas infinitas de enemigos, haz crecer tu poder y demuestra que ningún mundo es demasiado hostil cuando luchas con determinación."
+autowrap_mode = 2
+clip_text = true
+
+[node name="start" type="Button" parent="PanelContainer"]
+layout_mode = 0
+offset_left = 815.0
+offset_top = 531.0
+offset_right = 1062.0
+offset_bottom = 582.0
+theme_override_colors/font_color = Color(0.692708, 0.692708, 0.692708, 1)
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_uwhr8")
+text = "¡Estoy Listo!"
+
+[connection signal="pressed" from="PanelContainer/start" to="." method="_on_start_pressed"]
